@@ -1,0 +1,64 @@
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
+import { categories, products } from '@/data/products';
+
+const Categories = () => {
+  const getProductCount = (categoryId: string) => {
+    return products.filter((p) => p.category === categoryId).length;
+  };
+
+  return (
+    <main className="py-8">
+      <div className="container">
+        {/* Header */}
+        <div className="mb-12 text-center">
+          <h1 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Shop by Category
+          </h1>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Discover our curated collection of home essentials organized by category
+          </p>
+        </div>
+
+        {/* Categories Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {categories.map((category, index) => (
+            <Link
+              key={category.id}
+              to={`/products?category=${category.id}`}
+              className="group relative aspect-[4/3] rounded-2xl overflow-hidden card-shadow hover:card-shadow-hover transition-all duration-300 animate-fade-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <img
+                src={category.image}
+                alt={category.name}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/40 to-transparent" />
+              <div className="absolute inset-0 flex flex-col justify-end p-6">
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="text-4xl">{category.icon}</span>
+                  <div>
+                    <h2 className="font-display text-2xl font-bold text-background">
+                      {category.name}
+                    </h2>
+                    <p className="text-background/80 text-sm">
+                      {getProductCount(category.id)} products
+                    </p>
+                  </div>
+                </div>
+                <p className="text-background/90 text-sm mb-4">{category.description}</p>
+                <div className="flex items-center gap-2 text-background font-medium group-hover:gap-3 transition-all">
+                  <span>Shop Now</span>
+                  <ArrowRight className="h-4 w-4" />
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </main>
+  );
+};
+
+export default Categories;
