@@ -109,14 +109,16 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Cormorant Garamond', serif;
-    letter-spacing: -0.02em;
+    font-weight: 600;
+    letter-spacing: -0.01em;
   }
 }
 
 @layer utilities {
   .font-display {
     font-family: 'Cormorant Garamond', serif;
-    letter-spacing: -0.02em;
+    font-weight: 600;
+    letter-spacing: -0.01em;
   }
 
   .font-body {
@@ -125,6 +127,39 @@
 
   .font-script {
     font-family: 'Satisfy', cursive;
+  }
+
+  /* Page transition animations */
+  .page-transition {
+    animation: pageEnter 0.4s ease-out;
+  }
+
+  @keyframes pageEnter {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Staggered animation for lists */
+  .stagger-animation > * {
+    animation: fadeSlideIn 0.4s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .hero-gradient {

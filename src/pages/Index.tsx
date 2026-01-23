@@ -5,7 +5,7 @@ import Features from '@/components/home/Features';
 
 const Index = () => {
   return (
-    <main>
+    <main className="page-transition">
       <Hero />
       <CategoryShowcase />
       <FeaturedProducts />

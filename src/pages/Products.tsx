@@ -69,14 +69,14 @@ const Products = () => {
   const currentCategory = categories.find((c) => c.id === categoryFilter);
 
   return (
-    <main className="py-8">
+    <main className="py-8 page-transition">
       <div className="container">
         {/* Header */}
-        <div className="mb-8">
-          <h1 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-2">
+        <div className="mb-8 animate-fade-in">
+          <h1 className="font-display text-4xl md:text-5xl font-semibold text-foreground mb-2">
             {currentCategory ? currentCategory.name : 'All Products'}
           </h1>
-          <p className="text-muted-foreground">
+          <p className="text-muted-foreground text-lg">
             {currentCategory
               ? currentCategory.description
               : 'Browse our complete collection of home essentials'}
@@ -84,7 +84,7 @@ const Products = () => {
         </div>
 
         {/* Filters Bar */}
-        <div className="flex flex-col md:flex-row gap-4 mb-8">
+        <div className="flex flex-col md:flex-row gap-4 mb-8 animate-fade-in" style={{ animationDelay: '0.1s' }}>
           <form onSubmit={handleSearch} className="flex-1">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
@@ -93,7 +93,7 @@ const Products = () => {
                 placeholder="Search products..."
                 value={localSearch}
                 onChange={(e) => setLocalSearch(e.target.value)}
-                className="w-full h-10 pl-10 pr-4 rounded-lg border border-input bg-background text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+                className="w-full h-10 pl-10 pr-4 rounded-lg border border-input bg-background text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring font-body"
               />
             </div>
           </form>
@@ -111,7 +111,7 @@ const Products = () => {
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as typeof sortBy)}
-              className="h-10 px-4 rounded-lg border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+              className="h-10 px-4 rounded-lg border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring font-body"
             >
               <option value="name">Sort by Name</option>
               <option value="price-asc">Price: Low to High</option>
@@ -127,7 +127,7 @@ const Products = () => {
         </div>
 
         {/* Category Pills */}
-        <div className={`mb-8 ${showFilters ? 'block' : 'hidden md:block'}`}>
+        <div className={`mb-8 animate-fade-in ${showFilters ? 'block' : 'hidden md:block'}`} style={{ animationDelay: '0.15s' }}>
           <div className="flex flex-wrap gap-2">
             <Button
               variant={!categoryFilter ? 'default' : 'outline'}
@@ -166,7 +166,7 @@ const Products = () => {
               <div
                 key={product.id}
                 className="animate-fade-in"
-                style={{ animationDelay: `${index * 0.03}s` }}
+                style={{ animationDelay: `${0.2 + index * 0.03}s` }}
               >
                 <ProductCard product={product} />
               </div>

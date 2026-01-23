@@ -11,6 +11,7 @@ import CartSidebar from "@/components/cart/CartSidebar";
 import Index from "./pages/Index";
 import Products from "./pages/Products";
 import Categories from "./pages/Categories";
+import ProductDetail from "./pages/ProductDetail";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import NotFound from "./pages/NotFound";
@@ -31,6 +32,7 @@ const App = () => (
                 <Routes>
                   <Route path="/" element={<Index />} />
                   <Route path="/products" element={<Products />} />
+                  <Route path="/product/:productId" element={<ProductDetail />} />
                   <Route path="/categories" element={<Categories />} />
                   <Route path="/login" element={<Login />} />
                   <Route path="/signup" element={<Signup />} />
