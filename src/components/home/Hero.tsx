@@ -18,10 +18,10 @@ const Hero = () => {
               <span>🌿</span>
               <span>Premium Home Essentials</span>
             </div>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-semibold text-foreground leading-tight">
               Bring <span className="text-gradient">Quality</span> to Your Kitchen
             </h1>
-            <p className="text-lg text-muted-foreground max-w-lg">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-lg leading-relaxed">
               Discover our curated collection of spices, teas, pantry essentials, and more.
               From exotic flavors to everyday basics, elevate your home cooking experience.
             </p>
@@ -42,16 +42,16 @@ const Hero = () => {
             {/* Stats */}
             <div className="flex gap-8 pt-4">
               <div>
-                <p className="font-display text-3xl font-bold text-foreground">200+</p>
-                <p className="text-sm text-muted-foreground">Products</p>
+                <p className="font-display text-4xl font-semibold text-foreground">200+</p>
+                <p className="text-sm text-muted-foreground tracking-wide">Products</p>
               </div>
               <div>
-                <p className="font-display text-3xl font-bold text-foreground">50+</p>
-                <p className="text-sm text-muted-foreground">Spices</p>
+                <p className="font-display text-4xl font-semibold text-foreground">50+</p>
+                <p className="text-sm text-muted-foreground tracking-wide">Spices</p>
               </div>
               <div>
-                <p className="font-display text-3xl font-bold text-foreground">4.9★</p>
-                <p className="text-sm text-muted-foreground">Rating</p>
+                <p className="font-display text-4xl font-semibold text-foreground">4.9★</p>
+                <p className="text-sm text-muted-foreground tracking-wide">Rating</p>
               </div>
             </div>
           </div>
