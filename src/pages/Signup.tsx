@@ -16,14 +16,14 @@ const Signup = () => {
   };
 
   return (
-    <main className="min-h-[calc(100vh-4rem)] flex items-center justify-center py-12">
+    <main className="min-h-[calc(100vh-4rem)] flex items-center justify-center py-12 page-transition">
       <div className="container max-w-md">
         <div className="bg-card rounded-2xl p-8 card-shadow animate-fade-in">
           {/* Header */}
           <div className="text-center mb-8">
             <div className="inline-flex items-center gap-2 mb-4">
               <span className="text-3xl">🏡</span>
-              <span className="font-display text-2xl font-semibold">CasaBliss</span>
+              <span className="font-script text-3xl text-primary">CasaBliss</span>
             </div>
             <h1 className="font-display text-2xl font-bold text-foreground">
               Create Account

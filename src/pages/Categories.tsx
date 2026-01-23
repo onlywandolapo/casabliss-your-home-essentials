@@ -8,14 +8,14 @@ const Categories = () => {
   };
 
   return (
-    <main className="py-8">
+    <main className="py-8 page-transition">
       <div className="container">
         {/* Header */}
-        <div className="mb-12 text-center">
-          <h1 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+        <div className="mb-12 text-center animate-fade-in">
+          <h1 className="font-display text-4xl md:text-5xl font-semibold text-foreground mb-4">
             Shop by Category
           </h1>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Discover our curated collection of home essentials organized by category
           </p>
         </div>
@@ -27,7 +27,7 @@ const Categories = () => {
               key={category.id}
               to={`/products?category=${category.id}`}
               className="group relative aspect-[4/3] rounded-2xl overflow-hidden card-shadow hover:card-shadow-hover transition-all duration-300 animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              style={{ animationDelay: `${index * 0.08}s` }}
             >
               <img
                 src={category.image}
@@ -39,16 +39,16 @@ const Categories = () => {
                 <div className="flex items-center gap-3 mb-2">
                   <span className="text-4xl">{category.icon}</span>
                   <div>
-                    <h2 className="font-display text-2xl font-bold text-background">
+                    <h2 className="font-body text-2xl font-semibold text-background tracking-wide">
                       {category.name}
                     </h2>
-                    <p className="text-background/80 text-sm">
+                    <p className="text-background/80 text-sm font-body">
                       {getProductCount(category.id)} products
                     </p>
                   </div>
                 </div>
-                <p className="text-background/90 text-sm mb-4">{category.description}</p>
-                <div className="flex items-center gap-2 text-background font-medium group-hover:gap-3 transition-all">
+                <p className="text-background/90 text-sm mb-4 font-body">{category.description}</p>
+                <div className="flex items-center gap-2 text-background font-medium font-body group-hover:gap-3 transition-all">
                   <span>Shop Now</span>
                   <ArrowRight className="h-4 w-4" />
                 </div>
