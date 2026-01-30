@@ -9,6 +9,15 @@ interface ProductCardProps {
   product: Product;
 }
 
+const formatPrice = (price: number) => {
+  return new Intl.NumberFormat('en-NG', {
+    style: 'currency',
+    currency: 'NGN',
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(price);
+};
+
 const ProductCard = ({ product }: ProductCardProps) => {
   const { addToCart, items } = useCart();
   const [isAdding, setIsAdding] = useState(false);
@@ -25,7 +34,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
     setTimeout(() => setIsAdding(false), 500);
   };
 
-  const fallbackImage = `https://placehold.co/400x400/e8e4dc/5d5347?text=${encodeURIComponent(product.name.split(' ')[0])}`;
+  const fallbackImage = `https://placehold.co/400x400/2d5a3d/ffffff?text=${encodeURIComponent(product.name.split(' ')[0])}`;
 
   return (
     <Link
@@ -41,7 +50,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
         />
         {!product.inStock && (
           <div className="absolute inset-0 bg-background/80 flex items-center justify-center">
-            <span className="text-muted-foreground font-medium">Out of Stock</span>
+            <span className="text-muted-foreground font-medium">Sold Out</span>
           </div>
         )}
       </div>
@@ -51,8 +60,8 @@ const ProductCard = ({ product }: ProductCardProps) => {
           {product.description}
         </p>
         <div className="flex items-center justify-between mt-4">
-          <span className="font-display text-xl font-semibold text-foreground">
-            ${product.price.toFixed(2)}
+          <span className="font-display text-lg font-semibold text-foreground">
+            {formatPrice(product.price)}
           </span>
           <Button
             variant={inCart ? 'secondary' : 'default'}

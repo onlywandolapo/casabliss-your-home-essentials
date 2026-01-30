@@ -5,7 +5,7 @@ import { products } from '@/data/products';
 import { ArrowRight } from 'lucide-react';
 
 const FeaturedProducts = () => {
-  // Get a mix of products from different categories
+  // Get a mix of popular items from different categories
   const featuredProducts = products.slice(0, 8);
 
   return (
@@ -14,15 +14,15 @@ const FeaturedProducts = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
           <div>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Featured Products
+              Popular Dishes
             </h2>
             <p className="text-muted-foreground max-w-2xl">
-              Hand-picked essentials loved by our customers
+              Customer favorites and bestsellers you'll love
             </p>
           </div>
           <Link to="/products">
             <Button variant="outline">
-              View All Products
+              View Full Menu
               <ArrowRight className="h-4 w-4" />
             </Button>
           </Link>

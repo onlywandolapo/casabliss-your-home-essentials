@@ -15,26 +15,26 @@ const Hero = () => {
           {/* Content */}
           <div className="space-y-8 animate-fade-in">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
-              <span>🌿</span>
-              <span>Premium Home Essentials</span>
+              <span>🔥</span>
+              <span>Fast Food • Nigerian Cuisine</span>
             </div>
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-semibold text-foreground leading-tight">
-              Bring <span className="text-gradient">Quality</span> to Your Kitchen
+              Taste the <span className="text-gradient">Flavor</span> of Nigeria
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-lg leading-relaxed">
-              Discover our curated collection of spices, teas, pantry essentials, and more.
-              From exotic flavors to everyday basics, elevate your home cooking experience.
+              From smoky jollof rice to crispy shawarma, discover authentic Nigerian dishes 
+              and intercontinental favorites. Fresh, fast, and absolutely delicious!
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/products">
                 <Button variant="hero" size="xl">
-                  Shop Now
+                  Order Now
                   <ArrowRight className="h-5 w-5" />
                 </Button>
               </Link>
               <Link to="/categories">
                 <Button variant="outline" size="xl">
-                  Browse Categories
+                  View Menu
                 </Button>
               </Link>
             </div>
@@ -42,16 +42,16 @@ const Hero = () => {
             {/* Stats */}
             <div className="flex gap-8 pt-4">
               <div>
-                <p className="font-display text-4xl font-semibold text-foreground">200+</p>
-                <p className="text-sm text-muted-foreground tracking-wide">Products</p>
+                <p className="font-display text-4xl font-semibold text-foreground">50+</p>
+                <p className="text-sm text-muted-foreground tracking-wide">Menu Items</p>
               </div>
               <div>
-                <p className="font-display text-4xl font-semibold text-foreground">50+</p>
-                <p className="text-sm text-muted-foreground tracking-wide">Spices</p>
+                <p className="font-display text-4xl font-semibold text-foreground">30min</p>
+                <p className="text-sm text-muted-foreground tracking-wide">Fast Delivery</p>
               </div>
               <div>
                 <p className="font-display text-4xl font-semibold text-foreground">4.9★</p>
-                <p className="text-sm text-muted-foreground tracking-wide">Rating</p>
+                <p className="text-sm text-muted-foreground tracking-wide">Customer Rating</p>
               </div>
             </div>
           </div>
@@ -61,28 +61,28 @@ const Hero = () => {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
                 <img
-                  src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=400&h=500&fit=crop"
-                  alt="Spices"
+                  src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=400&h=500&fit=crop"
+                  alt="Jollof Rice"
                   className="w-full h-64 object-cover rounded-2xl card-shadow animate-fade-in"
                   style={{ animationDelay: '0.1s' }}
                 />
                 <img
-                  src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=400&h=300&fit=crop"
-                  alt="Tea"
+                  src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&h=300&fit=crop"
+                  alt="Shawarma"
                   className="w-full h-40 object-cover rounded-2xl card-shadow animate-fade-in"
                   style={{ animationDelay: '0.2s' }}
                 />
               </div>
               <div className="space-y-4 pt-8">
                 <img
-                  src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=400&h=300&fit=crop"
-                  alt="Pantry"
+                  src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=300&fit=crop"
+                  alt="Grilled Meat"
                   className="w-full h-40 object-cover rounded-2xl card-shadow animate-fade-in"
                   style={{ animationDelay: '0.3s' }}
                 />
                 <img
-                  src="https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=400&h=500&fit=crop"
-                  alt="Juices"
+                  src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=500&fit=crop"
+                  alt="Burger"
                   className="w-full h-64 object-cover rounded-2xl card-shadow animate-fade-in"
                   style={{ animationDelay: '0.4s' }}
                 />

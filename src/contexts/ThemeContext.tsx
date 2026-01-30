@@ -11,7 +11,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(() => {
-    const stored = localStorage.getItem('casabliss-theme');
+    const stored = localStorage.getItem('metromunch-theme');
     return (stored as Theme) || 'light';
   });
 
@@ -19,7 +19,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const root = window.document.documentElement;
     root.classList.remove('light', 'dark');
     root.classList.add(theme);
-    localStorage.setItem('casabliss-theme', theme);
+    localStorage.setItem('metromunch-theme', theme);
   }, [theme]);
 
   const toggleTheme = () => {
