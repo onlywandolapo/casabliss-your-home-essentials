@@ -5,6 +5,15 @@ import { products, categories } from '@/data/products';
 import { useCart } from '@/contexts/CartContext';
 import ProductCard from '@/components/products/ProductCard';
 
+const formatPrice = (price: number) => {
+  return new Intl.NumberFormat('en-NG', {
+    style: 'currency',
+    currency: 'NGN',
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(price);
+};
+
 const ProductDetail = () => {
   const { productId } = useParams<{ productId: string }>();
   const navigate = useNavigate();
@@ -19,14 +28,14 @@ const ProductDetail = () => {
       <main className="py-16 page-transition">
         <div className="container text-center">
           <h1 className="font-display text-3xl font-bold text-foreground mb-4">
-            Product Not Found
+            Item Not Found
           </h1>
           <p className="text-muted-foreground mb-8">
-            The product you're looking for doesn't exist.
+            The menu item you're looking for doesn't exist.
           </p>
           <Button onClick={() => navigate('/products')}>
             <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to Products
+            Back to Menu
           </Button>
         </div>
       </main>
@@ -48,7 +57,7 @@ const ProductDetail = () => {
           </Link>
           <span>/</span>
           <Link to="/products" className="hover:text-foreground transition-colors">
-            Products
+            Menu
           </Link>
           {category && (
             <>
@@ -100,16 +109,16 @@ const ProductDetail = () => {
 
             <div className="flex items-center gap-4 mb-6">
               <span className="font-display text-4xl font-bold text-foreground">
-                ${product.price.toFixed(2)}
+                {formatPrice(product.price)}
               </span>
               {product.inStock ? (
                 <span className="inline-flex items-center gap-1 text-sm text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-900/30 px-3 py-1 rounded-full">
                   <Check className="h-3 w-3" />
-                  In Stock
+                  Available
                 </span>
               ) : (
                 <span className="text-sm text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-900/30 px-3 py-1 rounded-full">
-                  Out of Stock
+                  Sold Out
                 </span>
               )}
             </div>
@@ -146,7 +155,7 @@ const ProductDetail = () => {
                   className="gap-2"
                 >
                   <ShoppingCart className="h-5 w-5" />
-                  Add to Cart
+                  Add to Order
                 </Button>
               )}
             </div>
@@ -154,7 +163,7 @@ const ProductDetail = () => {
             {/* Product Details List */}
             <div className="border-t border-border pt-6 mt-auto">
               <h3 className="font-display text-lg font-semibold text-foreground mb-4">
-                Product Details
+                Item Details
               </h3>
               <ul className="space-y-2 text-muted-foreground">
                 <li className="flex items-center justify-between">
@@ -162,12 +171,12 @@ const ProductDetail = () => {
                   <span className="text-foreground">{category?.name || 'N/A'}</span>
                 </li>
                 <li className="flex items-center justify-between">
-                  <span>SKU</span>
+                  <span>Item Code</span>
                   <span className="text-foreground font-mono text-sm">{product.id.toUpperCase()}</span>
                 </li>
                 <li className="flex items-center justify-between">
                   <span>Availability</span>
-                  <span className="text-foreground">{product.inStock ? 'Available' : 'Out of Stock'}</span>
+                  <span className="text-foreground">{product.inStock ? 'Available Now' : 'Sold Out'}</span>
                 </li>
               </ul>
             </div>

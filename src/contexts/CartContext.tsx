@@ -21,13 +21,13 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [items, setItems] = useState<CartItem[]>(() => {
-    const stored = localStorage.getItem('casabliss-cart');
+    const stored = localStorage.getItem('metromunch-cart');
     return stored ? JSON.parse(stored) : [];
   });
   const [isCartOpen, setIsCartOpen] = useState(false);
 
   useEffect(() => {
-    localStorage.setItem('casabliss-cart', JSON.stringify(items));
+    localStorage.setItem('metromunch-cart', JSON.stringify(items));
   }, [items]);
 
   const addToCart = (product: Product) => {

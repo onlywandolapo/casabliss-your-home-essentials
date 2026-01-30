@@ -74,12 +74,12 @@ const Products = () => {
         {/* Header */}
         <div className="mb-8 animate-fade-in">
           <h1 className="font-display text-4xl md:text-5xl font-semibold text-foreground mb-2">
-            {currentCategory ? currentCategory.name : 'All Products'}
+            {currentCategory ? currentCategory.name : 'Full Menu'}
           </h1>
           <p className="text-muted-foreground text-lg">
             {currentCategory
               ? currentCategory.description
-              : 'Browse our complete collection of home essentials'}
+              : 'Browse our complete menu of delicious dishes and drinks'}
           </p>
         </div>
 
@@ -90,7 +90,7 @@ const Products = () => {
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <input
                 type="text"
-                placeholder="Search products..."
+                placeholder="Search menu..."
                 value={localSearch}
                 onChange={(e) => setLocalSearch(e.target.value)}
                 className="w-full h-10 pl-10 pr-4 rounded-lg border border-input bg-background text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring font-body"
@@ -151,13 +151,13 @@ const Products = () => {
 
         {/* Results Count */}
         <p className="text-sm text-muted-foreground mb-6">
-          {filteredProducts.length} product{filteredProducts.length !== 1 ? 's' : ''} found
+          {filteredProducts.length} item{filteredProducts.length !== 1 ? 's' : ''} found
         </p>
 
         {/* Products Grid */}
         {filteredProducts.length === 0 ? (
           <div className="text-center py-16">
-            <p className="text-muted-foreground text-lg mb-4">No products found</p>
+            <p className="text-muted-foreground text-lg mb-4">No items found</p>
             <Button onClick={clearFilters}>Clear Filters</Button>
           </div>
         ) : (

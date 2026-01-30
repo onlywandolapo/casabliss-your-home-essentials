@@ -3,6 +3,15 @@ import { Button } from '@/components/ui/button';
 import { useCart } from '@/contexts/CartContext';
 import { useEffect } from 'react';
 
+const formatPrice = (price: number) => {
+  return new Intl.NumberFormat('en-NG', {
+    style: 'currency',
+    currency: 'NGN',
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(price);
+};
+
 const CartSidebar = () => {
   const {
     items,
@@ -43,7 +52,7 @@ const CartSidebar = () => {
           <div className="flex items-center justify-between p-4 border-b border-border">
             <div className="flex items-center gap-2">
               <ShoppingBag className="h-5 w-5 text-primary" />
-              <h2 className="font-display text-lg font-semibold">Your Cart</h2>
+              <h2 className="font-display text-lg font-semibold">Your Order</h2>
             </div>
             <Button variant="ghost" size="icon" onClick={() => setIsCartOpen(false)}>
               <X className="h-5 w-5" />
@@ -61,7 +70,7 @@ const CartSidebar = () => {
                   className="mt-4"
                   onClick={() => setIsCartOpen(false)}
                 >
-                  Continue Shopping
+                  Browse Menu
                 </Button>
               </div>
             ) : (
@@ -79,7 +88,7 @@ const CartSidebar = () => {
                     <div className="flex-1 min-w-0">
                       <h3 className="font-medium text-sm truncate">{item.name}</h3>
                       <p className="text-sm text-muted-foreground">
-                        ${item.price.toFixed(2)}
+                        {formatPrice(item.price)}
                       </p>
                       <div className="flex items-center gap-2 mt-2">
                         <Button
@@ -123,11 +132,11 @@ const CartSidebar = () => {
               <div className="flex justify-between items-center">
                 <span className="text-muted-foreground">Subtotal</span>
                 <span className="font-display text-xl font-semibold">
-                  ${totalPrice.toFixed(2)}
+                  {formatPrice(totalPrice)}
                 </span>
               </div>
               <Button variant="hero" size="lg" className="w-full">
-                Checkout
+                Place Order
               </Button>
               <Button
                 variant="ghost"

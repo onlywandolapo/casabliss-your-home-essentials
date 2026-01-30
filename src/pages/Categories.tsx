@@ -13,10 +13,10 @@ const Categories = () => {
         {/* Header */}
         <div className="mb-12 text-center animate-fade-in">
           <h1 className="font-display text-4xl md:text-5xl font-semibold text-foreground mb-4">
-            Shop by Category
+            Our Menu Categories
           </h1>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Discover our curated collection of home essentials organized by category
+            Explore our delicious menu featuring Nigerian favorites and international cuisine
           </p>
         </div>
 
@@ -43,13 +43,13 @@ const Categories = () => {
                       {category.name}
                     </h2>
                     <p className="text-background/80 text-sm font-body">
-                      {getProductCount(category.id)} products
+                      {getProductCount(category.id)} items
                     </p>
                   </div>
                 </div>
                 <p className="text-background/90 text-sm mb-4 font-body">{category.description}</p>
                 <div className="flex items-center gap-2 text-background font-medium font-body group-hover:gap-3 transition-all">
-                  <span>Shop Now</span>
+                  <span>Order Now</span>
                   <ArrowRight className="h-4 w-4" />
                 </div>
               </div>

@@ -8,11 +8,11 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <span className="text-2xl">🏡</span>
-              <span className="font-display text-xl font-semibold">CasaBliss</span>
+              <span className="text-2xl">🍔</span>
+              <span className="font-script text-xl text-primary">Metro Munch</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              Your one-stop shop for quality home essentials. From spices to snacks, we've got everything you need.
+              Your favorite fast food spot for authentic Nigerian dishes, intercontinental cuisine, and delicious snacks. Quality food, fast delivery!
             </p>
           </div>
 
@@ -27,7 +27,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="/products" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  All Products
+                  Full Menu
                 </Link>
               </li>
               <li>
@@ -40,26 +40,26 @@ const Footer = () => {
 
           {/* Categories */}
           <div>
-            <h4 className="font-display font-semibold mb-4">Categories</h4>
+            <h4 className="font-display font-semibold mb-4">Our Menu</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/products?category=spices" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Spices
+                <Link to="/products?category=nigerian-dishes" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Nigerian Dishes
                 </Link>
               </li>
               <li>
-                <Link to="/products?category=teas" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Teas
+                <Link to="/products?category=intercontinental" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Intercontinental
                 </Link>
               </li>
               <li>
-                <Link to="/products?category=juices" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Juices
+                <Link to="/products?category=grills-shawarma" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Grills & Shawarma
                 </Link>
               </li>
               <li>
-                <Link to="/products?category=pantry" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Pantry
+                <Link to="/products?category=snacks" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Snacks
                 </Link>
               </li>
             </ul>
@@ -69,15 +69,18 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-semibold mb-4">Contact Us</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>📧 hello@casabliss.com</li>
-              <li>📞 +1 (555) 123-4567</li>
-              <li>📍 123 Home Street, City</li>
+              <li>📧 hello@metromunch.ng</li>
+              <li>📞 +234 (0) 812 345 6789</li>
+              <li>📍 123 Victoria Island, Lagos</li>
+              <li className="pt-2">
+                <span className="text-primary font-medium">Open Daily: 8am - 11pm</span>
+              </li>
             </ul>
           </div>
         </div>
 
         <div className="mt-8 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} CasaBliss. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Metro Munch. All rights reserved. Made with 💚 in Nigeria</p>
         </div>
       </div>
     </footer>

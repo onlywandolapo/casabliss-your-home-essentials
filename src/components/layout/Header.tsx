@@ -25,9 +25,9 @@ const Header = () => {
       <div className="container flex h-16 items-center justify-between gap-4">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <span className="text-3xl">🏡</span>
+          <span className="text-3xl">🍔</span>
           <span className="font-script text-3xl md:text-4xl text-primary tracking-wide">
-            CasaBliss
+            Metro Munch
           </span>
         </Link>
 
@@ -43,7 +43,7 @@ const Header = () => {
             to="/products"
             className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
           >
-            Products
+            Menu
           </Link>
           <Link
             to="/categories"
@@ -59,7 +59,7 @@ const Header = () => {
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <input
               type="text"
-              placeholder="Search products..."
+              placeholder="Search menu..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full h-10 pl-10 pr-4 rounded-lg border border-input bg-background text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
@@ -123,7 +123,7 @@ const Header = () => {
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 <input
                   type="text"
-                  placeholder="Search products..."
+                  placeholder="Search menu..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full h-10 pl-10 pr-4 rounded-lg border border-input bg-background text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
@@ -143,7 +143,7 @@ const Header = () => {
                 className="px-4 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-lg"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Products
+                Menu
               </Link>
               <Link
                 to="/categories"

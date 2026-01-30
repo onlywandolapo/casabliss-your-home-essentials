@@ -8,10 +8,10 @@ const CategoryShowcase = () => {
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Shop by Category
+            Explore Our Menu
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Explore our wide range of categories, from aromatic spices to refreshing beverages
+            From authentic Nigerian dishes to international favorites, we've got something for everyone
           </p>
         </div>
 

@@ -21,14 +21,14 @@ const Login = () => {
           {/* Header */}
           <div className="text-center mb-8">
             <div className="inline-flex items-center gap-2 mb-4">
-              <span className="text-3xl">🏡</span>
-              <span className="font-script text-3xl text-primary">CasaBliss</span>
+              <span className="text-3xl">🍔</span>
+              <span className="font-script text-3xl text-primary">Metro Munch</span>
             </div>
             <h1 className="font-display text-2xl font-bold text-foreground">
               Welcome Back
             </h1>
             <p className="text-muted-foreground mt-2">
-              Sign in to your account to continue shopping
+              Sign in to your account to order delicious food
             </p>
           </div>
 

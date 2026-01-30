@@ -22,14 +22,14 @@ const Signup = () => {
           {/* Header */}
           <div className="text-center mb-8">
             <div className="inline-flex items-center gap-2 mb-4">
-              <span className="text-3xl">🏡</span>
-              <span className="font-script text-3xl text-primary">CasaBliss</span>
+              <span className="text-3xl">🍔</span>
+              <span className="font-script text-3xl text-primary">Metro Munch</span>
             </div>
             <h1 className="font-display text-2xl font-bold text-foreground">
               Create Account
             </h1>
             <p className="text-muted-foreground mt-2">
-              Join CasaBliss and start shopping for quality home essentials
+              Join Metro Munch and enjoy delicious food delivered to you
             </p>
           </div>
 

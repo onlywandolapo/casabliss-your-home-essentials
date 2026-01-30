@@ -1,20 +1,20 @@
-import { Truck, Shield, Leaf, HeartHandshake } from 'lucide-react';
+import { Truck, Shield, Clock, HeartHandshake } from 'lucide-react';
 
 const features = [
   {
     icon: Truck,
     title: 'Fast Delivery',
-    description: 'Free shipping on orders over $50',
+    description: 'Hot food at your door in 30 mins',
   },
   {
     icon: Shield,
     title: 'Quality Guaranteed',
-    description: 'Premium products, always fresh',
+    description: 'Fresh ingredients, always',
   },
   {
-    icon: Leaf,
-    title: 'Natural & Organic',
-    description: 'Sustainably sourced ingredients',
+    icon: Clock,
+    title: 'Open Daily',
+    description: '8am - 11pm, 7 days a week',
   },
   {
     icon: HeartHandshake,
