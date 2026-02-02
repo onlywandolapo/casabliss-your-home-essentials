@@ -4,6 +4,7 @@ import { useTheme } from '@/contexts/ThemeContext';
 import { useCart } from '@/contexts/CartContext';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import metroMunchLogo from '@/assets/metro-munch-logo.jpg';
 
 const Header = () => {
   const { theme, toggleTheme } = useTheme();
@@ -25,8 +26,12 @@ const Header = () => {
       <div className="container flex h-16 items-center justify-between gap-4">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <span className="text-3xl">🍔</span>
-          <span className="font-script text-3xl md:text-4xl text-primary tracking-wide">
+          <img 
+            src={metroMunchLogo} 
+            alt="Metro Munch" 
+            className="h-12 w-12 rounded-full object-cover"
+          />
+          <span className="font-display text-2xl md:text-3xl font-bold text-primary tracking-tight">
             Metro Munch
           </span>
         </Link>

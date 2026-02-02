@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import metroMunchLogo from '@/assets/metro-munch-logo.jpg';
 
 const Footer = () => {
   return (
@@ -8,8 +9,12 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <span className="text-2xl">🍔</span>
-              <span className="font-script text-xl text-primary">Metro Munch</span>
+              <img 
+                src={metroMunchLogo} 
+                alt="Metro Munch" 
+                className="h-10 w-10 rounded-full object-cover"
+              />
+              <span className="font-display text-xl font-bold text-primary">Metro Munch</span>
             </div>
             <p className="text-sm text-muted-foreground">
               Your favorite fast food spot for authentic Nigerian dishes, intercontinental cuisine, and delicious snacks. Quality food, fast delivery!
@@ -48,18 +53,13 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/products?category=intercontinental" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Intercontinental
+                <Link to="/products?category=proteins" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Extra Proteins
                 </Link>
               </li>
               <li>
-                <Link to="/products?category=grills-shawarma" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Grills & Shawarma
-                </Link>
-              </li>
-              <li>
-                <Link to="/products?category=snacks" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Snacks
+                <Link to="/products?category=beverages" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Beverages
                 </Link>
               </li>
             </ul>
@@ -69,11 +69,11 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-semibold mb-4">Contact Us</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>📧 hello@metromunch.ng</li>
-              <li>📞 +234 (0) 812 345 6789</li>
-              <li>📍 123 Victoria Island, Lagos</li>
+              <li>📧 metromunchng@gmail.com</li>
+              <li>📞 +234 902 318 2683</li>
+              <li>📍 The Phillipi Centre, Oluwalogbon House, Plot A, Obafemi Awolowo Way, Ikeja, Lagos</li>
               <li className="pt-2">
-                <span className="text-primary font-medium">Open Daily: 8am - 11pm</span>
+                <span className="text-primary font-medium">Open Daily: 8am - 10pm</span>
               </li>
             </ul>
           </div>
