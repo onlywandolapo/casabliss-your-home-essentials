@@ -1,6 +1,7 @@
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import metroMunchLogo from '@/assets/metro-munch-logo.jpg';
 
 const Hero = () => {
   return (
@@ -42,7 +43,7 @@ const Hero = () => {
             {/* Stats */}
             <div className="flex gap-8 pt-4">
               <div>
-                <p className="font-display text-4xl font-semibold text-foreground">50+</p>
+                <p className="font-display text-4xl font-semibold text-foreground">30+</p>
                 <p className="text-sm text-muted-foreground tracking-wide">Menu Items</p>
               </div>
               <div>
@@ -58,34 +59,15 @@ const Hero = () => {
 
           {/* Image Grid */}
           <div className="relative hidden lg:block">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-4">
-                <img
-                  src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=400&h=500&fit=crop"
-                  alt="Jollof Rice"
-                  className="w-full h-64 object-cover rounded-2xl card-shadow animate-fade-in"
-                  style={{ animationDelay: '0.1s' }}
-                />
-                <img
-                  src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&h=300&fit=crop"
-                  alt="Shawarma"
-                  className="w-full h-40 object-cover rounded-2xl card-shadow animate-fade-in"
-                  style={{ animationDelay: '0.2s' }}
-                />
-              </div>
-              <div className="space-y-4 pt-8">
-                <img
-                  src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=300&fit=crop"
-                  alt="Grilled Meat"
-                  className="w-full h-40 object-cover rounded-2xl card-shadow animate-fade-in"
-                  style={{ animationDelay: '0.3s' }}
-                />
-                <img
-                  src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=500&fit=crop"
-                  alt="Burger"
-                  className="w-full h-64 object-cover rounded-2xl card-shadow animate-fade-in"
-                  style={{ animationDelay: '0.4s' }}
-                />
+            <div className="flex flex-col items-center justify-center">
+              <img
+                src={metroMunchLogo}
+                alt="Metro Munch Logo"
+                className="w-80 h-80 object-cover rounded-full card-shadow animate-fade-in border-4 border-primary/20"
+                style={{ animationDelay: '0.1s' }}
+              />
+              <div className="mt-8 text-center">
+                <p className="font-display text-2xl font-bold text-primary">by Eridan</p>
               </div>
             </div>
           </div>
