@@ -1,3 +1,15 @@
+// Import product images
+import jollofRiceImg from '@/assets/products/jollof-rice.jpg';
+import friedRiceImg from '@/assets/products/fried-rice.jpg';
+import semoEgusiImg from '@/assets/products/semo-egusi.jpg';
+import ebaEgusiImg from '@/assets/products/eba-egusi.jpg';
+import ebaEforitoImg from '@/assets/products/eba-eforiro.jpg';
+import amalaEweduImg from '@/assets/products/amala-ewedu.jpg';
+import cocaColaImg from '@/assets/products/coca-cola.jpg';
+import trophyImg from '@/assets/products/trophy.jpg';
+import guinnessImg from '@/assets/products/guinness.jpg';
+import goldbergImg from '@/assets/products/goldberg.jpg';
+
 export interface Product {
   id: string;
   name: string;
@@ -22,7 +34,7 @@ export const categories: Category[] = [
     name: 'Nigerian Dishes',
     description: 'Authentic local favorites',
     icon: '🍛',
-    image: 'https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=600&h=450&fit=crop',
+    image: jollofRiceImg,
   },
   {
     id: 'proteins',
@@ -36,7 +48,7 @@ export const categories: Category[] = [
     name: 'Beverages',
     description: 'Refreshing drinks',
     icon: '🥤',
-    image: 'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&h=450&fit=crop',
+    image: cocaColaImg,
   },
 ];
 
@@ -47,7 +59,7 @@ export const products: Product[] = [
     name: 'Jollof Rice & 2 Beef',
     description: 'Smoky party-style jollof rice served with 2 pieces of tasty beef',
     price: 1500,
-    image: 'https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=400&h=400&fit=crop',
+    image: jollofRiceImg,
     category: 'nigerian-dishes',
     inStock: true,
   },
@@ -56,7 +68,7 @@ export const products: Product[] = [
     name: 'Fried Rice & 2 Beef',
     description: 'Nigerian-style fried rice with vegetables and 2 pieces of beef',
     price: 1500,
-    image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=400&h=400&fit=crop',
+    image: friedRiceImg,
     category: 'nigerian-dishes',
     inStock: true,
   },
@@ -65,7 +77,7 @@ export const products: Product[] = [
     name: 'White Rice & Stew with 2 Beef',
     description: 'Fluffy white rice with rich tomato stew and 2 pieces of beef',
     price: 1500,
-    image: 'https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400&h=400&fit=crop',
+    image: jollofRiceImg,
     category: 'nigerian-dishes',
     inStock: true,
   },
@@ -74,7 +86,7 @@ export const products: Product[] = [
     name: 'White Rice & Stew with 1 Egg',
     description: 'Fluffy white rice with rich tomato stew and 1 fried egg',
     price: 1500,
-    image: 'https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400&h=400&fit=crop',
+    image: jollofRiceImg,
     category: 'nigerian-dishes',
     inStock: true,
   },
@@ -92,7 +104,7 @@ export const products: Product[] = [
     name: 'Semo & Egusi Soup with 2 Beef',
     description: 'Smooth semolina swallow with rich melon seed soup and 2 beef',
     price: 1500,
-    image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400&h=400&fit=crop',
+    image: semoEgusiImg,
     category: 'nigerian-dishes',
     inStock: true,
   },
@@ -101,7 +113,7 @@ export const products: Product[] = [
     name: 'Semo & Ewedu Soup with 2 Beef',
     description: 'Smooth semolina swallow with jute leaf soup and 2 beef',
     price: 1500,
-    image: 'https://images.unsplash.com/photo-1574484284002-952d92456975?w=400&h=400&fit=crop',
+    image: amalaEweduImg,
     category: 'nigerian-dishes',
     inStock: true,
   },
@@ -110,7 +122,7 @@ export const products: Product[] = [
     name: 'Semo & Eforiro Soup with 2 Beef',
     description: 'Smooth semolina swallow with vegetable soup and 2 beef',
     price: 1500,
-    image: 'https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=400&h=400&fit=crop',
+    image: ebaEforitoImg,
     category: 'nigerian-dishes',
     inStock: true,
   },
@@ -119,7 +131,7 @@ export const products: Product[] = [
     name: 'Eba & Egusi Soup with 2 Beef',
     description: 'Garri swallow with rich melon seed soup and 2 beef',
     price: 1500,
-    image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400&h=400&fit=crop',
+    image: ebaEgusiImg,
     category: 'nigerian-dishes',
     inStock: true,
   },
@@ -128,7 +140,7 @@ export const products: Product[] = [
     name: 'Eba & Ewedu Soup with 2 Beef',
     description: 'Garri swallow with jute leaf soup and 2 beef',
     price: 1500,
-    image: 'https://images.unsplash.com/photo-1574484284002-952d92456975?w=400&h=400&fit=crop',
+    image: amalaEweduImg,
     category: 'nigerian-dishes',
     inStock: true,
   },
@@ -137,7 +149,7 @@ export const products: Product[] = [
     name: 'Eba & Eforiro Soup with 2 Beef',
     description: 'Garri swallow with vegetable soup and 2 beef',
     price: 1500,
-    image: 'https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=400&h=400&fit=crop',
+    image: ebaEforitoImg,
     category: 'nigerian-dishes',
     inStock: true,
   },
@@ -182,7 +194,7 @@ export const products: Product[] = [
     name: 'Amala & Ewedu with Gbegiri',
     description: 'Soft yam flour swallow with jute leaf and bean soup',
     price: 1500,
-    image: 'https://images.unsplash.com/photo-1574484284002-952d92456975?w=400&h=400&fit=crop',
+    image: amalaEweduImg,
     category: 'nigerian-dishes',
     inStock: true,
   },
@@ -267,7 +279,7 @@ export const products: Product[] = [
     name: 'Coca-Cola',
     description: 'Classic Coca-Cola soft drink (50cl)',
     price: 500,
-    image: 'https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/43/8aborj/1.jpg?3968',
+    image: cocaColaImg,
     category: 'beverages',
     inStock: true,
   },
@@ -303,7 +315,7 @@ export const products: Product[] = [
     name: 'Trophy Lager',
     description: 'Premium Nigerian lager beer',
     price: 700,
-    image: 'https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/34/234116/1.jpg?1232',
+    image: trophyImg,
     category: 'beverages',
     inStock: true,
   },
@@ -312,7 +324,7 @@ export const products: Product[] = [
     name: 'Guinness Stout',
     description: 'Rich and creamy foreign extra stout',
     price: 800,
-    image: 'https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/53/324116/1.jpg?7152',
+    image: guinnessImg,
     category: 'beverages',
     inStock: true,
   },
@@ -330,7 +342,7 @@ export const products: Product[] = [
     name: 'Goldberg Lager',
     description: 'Premium Nigerian lager with a smooth taste',
     price: 600,
-    image: 'https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/48/424116/1.jpg?1133',
+    image: goldbergImg,
     category: 'beverages',
     inStock: true,
   },
