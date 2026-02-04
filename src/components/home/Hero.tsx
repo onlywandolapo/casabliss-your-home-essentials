@@ -23,8 +23,8 @@ const Hero = () => {
               Taste the <span className="text-gradient">Flavor</span> of Nigeria
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-lg leading-relaxed">
-              From smoky jollof rice to crispy shawarma, discover authentic Nigerian dishes 
-              and intercontinental favorites. Fresh, fast, and absolutely delicious!
+              Craving smoky jollof rice, crispy meat pies, or ice-cold drinks? 
+              We've got your favorite Nigerian meals ready in minutes. Hot, fresh, and always delicious!
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/products">

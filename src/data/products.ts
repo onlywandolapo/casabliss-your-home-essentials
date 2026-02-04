@@ -19,6 +19,12 @@ import chiExoticImg from '@/assets/products/chi-exotic.jpg';
 import fearlessImg from '@/assets/products/fearless.jpg';
 import maltaGuinnessImg from '@/assets/products/malta-guinness.jpg';
 import boiledEggImg from '@/assets/products/boiled-egg.jpg';
+import meatPieImg from '@/assets/products/meat-pie.jpg';
+import sausageRollImg from '@/assets/products/sausage-roll.jpg';
+import chickenPieImg from '@/assets/products/chicken-pie.jpg';
+import eggRollImg from '@/assets/products/egg-roll.jpg';
+import snacksCategoryImg from '@/assets/products/snacks-category.jpg';
+import bottledWaterImg from '@/assets/products/bottled-water.jpg';
 
 export interface Product {
   id: string;
@@ -58,7 +64,7 @@ export const categories: Category[] = [
     name: 'Snacks',
     description: 'Tasty quick bites',
     icon: '🥧',
-    image: 'https://images.unsplash.com/photo-1604467794349-0b74285de7e7?w=600&h=450&fit=crop',
+    image: snacksCategoryImg,
   },
   {
     id: 'beverages',
@@ -197,16 +203,6 @@ export const products: Product[] = [
     category: 'nigerian-dishes',
     inStock: true,
   },
-  {
-    id: 'ng-015',
-    name: 'Moi Moi',
-    description: 'Steamed bean pudding with fish and egg',
-    price: 500,
-    image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=400&fit=crop',
-    category: 'nigerian-dishes',
-    inStock: true,
-  },
-
   // ========== EXTRA PROTEINS ==========
   {
     id: 'pr-001',
@@ -251,7 +247,7 @@ export const products: Product[] = [
     name: 'Meat Pie',
     description: 'Flaky pastry filled with seasoned minced meat and vegetables',
     price: 700,
-    image: 'https://images.unsplash.com/photo-1604467794349-0b74285de7e7?w=400&h=400&fit=crop',
+    image: meatPieImg,
     category: 'snacks',
     inStock: true,
   },
@@ -260,7 +256,7 @@ export const products: Product[] = [
     name: 'Sausage Roll',
     description: 'Golden pastry wrapped around savory sausage',
     price: 500,
-    image: 'https://images.unsplash.com/photo-1555954293-33c6f4a4d08e?w=400&h=400&fit=crop',
+    image: sausageRollImg,
     category: 'snacks',
     inStock: true,
   },
@@ -269,7 +265,7 @@ export const products: Product[] = [
     name: 'Chicken Pie',
     description: 'Flaky pastry filled with seasoned chicken and vegetables',
     price: 700,
-    image: 'https://images.unsplash.com/photo-1604467794349-0b74285de7e7?w=400&h=400&fit=crop',
+    image: chickenPieImg,
     category: 'snacks',
     inStock: true,
   },
@@ -278,7 +274,7 @@ export const products: Product[] = [
     name: 'Egg Roll',
     description: 'Boiled egg wrapped in soft dough and fried golden',
     price: 500,
-    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=400&fit=crop',
+    image: eggRollImg,
     category: 'snacks',
     inStock: true,
   },
@@ -403,15 +399,6 @@ export const products: Product[] = [
   },
   {
     id: 'bv-013',
-    name: 'Zobo Drink',
-    description: 'Refreshing hibiscus drink with ginger',
-    price: 500,
-    image: 'https://images.unsplash.com/photo-1558017487-06bf9f82613a?w=400&h=400&fit=crop',
-    category: 'beverages',
-    inStock: true,
-  },
-  {
-    id: 'bv-014',
     name: 'Chapman',
     description: 'Nigerian signature cocktail mocktail',
     price: 1000,
@@ -420,11 +407,11 @@ export const products: Product[] = [
     inStock: true,
   },
   {
-    id: 'bv-015',
+    id: 'bv-014',
     name: 'Bottled Water',
     description: 'Premium bottled water (75cl)',
     price: 200,
-    image: 'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=400&h=400&fit=crop',
+    image: bottledWaterImg,
     category: 'beverages',
     inStock: true,
   },
