@@ -5,10 +5,20 @@ import semoEgusiImg from '@/assets/products/semo-egusi.jpg';
 import ebaEgusiImg from '@/assets/products/eba-egusi.jpg';
 import ebaEforitoImg from '@/assets/products/eba-eforiro.jpg';
 import amalaEweduImg from '@/assets/products/amala-ewedu.jpg';
+import ofadaRiceImg from '@/assets/products/ofada-rice.jpg';
 import cocaColaImg from '@/assets/products/coca-cola.jpg';
 import trophyImg from '@/assets/products/trophy.jpg';
 import guinnessImg from '@/assets/products/guinness.jpg';
 import goldbergImg from '@/assets/products/goldberg.jpg';
+import fantaImg from '@/assets/products/fanta.jpg';
+import spriteImg from '@/assets/products/sprite.jpg';
+import sevenUpImg from '@/assets/products/7up.jpg';
+import heinekenImg from '@/assets/products/heineken.jpg';
+import chiActiveImg from '@/assets/products/chi-active.jpg';
+import chiExoticImg from '@/assets/products/chi-exotic.jpg';
+import fearlessImg from '@/assets/products/fearless.jpg';
+import maltaGuinnessImg from '@/assets/products/malta-guinness.jpg';
+import boiledEggImg from '@/assets/products/boiled-egg.jpg';
 
 export interface Product {
   id: string;
@@ -42,6 +52,13 @@ export const categories: Category[] = [
     description: 'Add more protein to your meal',
     icon: '🍖',
     image: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=600&h=450&fit=crop',
+  },
+  {
+    id: 'snacks',
+    name: 'Snacks',
+    description: 'Tasty quick bites',
+    icon: '🥧',
+    image: 'https://images.unsplash.com/photo-1604467794349-0b74285de7e7?w=600&h=450&fit=crop',
   },
   {
     id: 'beverages',
@@ -155,24 +172,15 @@ export const products: Product[] = [
   },
   {
     id: 'ng-012',
-    name: 'Ofada Rice & Ayamase',
-    description: 'Local unpolished rice with spicy designer sauce',
-    price: 1800,
-    image: 'https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400&h=400&fit=crop',
+    name: 'Ofada Rice & Sauce',
+    description: 'Local unpolished rice with spicy ofada sauce',
+    price: 2000,
+    image: ofadaRiceImg,
     category: 'nigerian-dishes',
     inStock: true,
   },
   {
     id: 'ng-013',
-    name: 'Beans & Plantain',
-    description: 'Ewa agoyin style beans with fried ripe plantain',
-    price: 1200,
-    image: 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=400&h=400&fit=crop',
-    category: 'nigerian-dishes',
-    inStock: true,
-  },
-  {
-    id: 'ng-014',
     name: 'Porridge Yam',
     description: 'Soft yam porridge cooked with palm oil and vegetables',
     price: 1300,
@@ -181,16 +189,7 @@ export const products: Product[] = [
     inStock: true,
   },
   {
-    id: 'ng-015',
-    name: 'Pepper Soup',
-    description: 'Spicy aromatic goat meat pepper soup with local spices',
-    price: 2000,
-    image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400&h=400&fit=crop',
-    category: 'nigerian-dishes',
-    inStock: true,
-  },
-  {
-    id: 'ng-016',
+    id: 'ng-014',
     name: 'Amala & Ewedu with Gbegiri',
     description: 'Soft yam flour swallow with jute leaf and bean soup',
     price: 1500,
@@ -199,38 +198,11 @@ export const products: Product[] = [
     inStock: true,
   },
   {
-    id: 'ng-017',
-    name: 'Suya Platter',
-    description: 'Spicy grilled beef skewers with yaji spice and onions',
-    price: 2500,
-    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=400&fit=crop',
-    category: 'nigerian-dishes',
-    inStock: true,
-  },
-  {
-    id: 'ng-018',
+    id: 'ng-015',
     name: 'Moi Moi',
     description: 'Steamed bean pudding with fish and egg',
     price: 500,
     image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=400&fit=crop',
-    category: 'nigerian-dishes',
-    inStock: true,
-  },
-  {
-    id: 'ng-019',
-    name: 'Akara (6 pcs)',
-    description: 'Crispy bean cakes, freshly fried',
-    price: 500,
-    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=400&fit=crop',
-    category: 'nigerian-dishes',
-    inStock: true,
-  },
-  {
-    id: 'ng-020',
-    name: 'Puff Puff (12 pcs)',
-    description: 'Sweet fluffy Nigerian doughnuts',
-    price: 500,
-    image: 'https://images.unsplash.com/photo-1558401391-4019c28e07ce?w=400&h=400&fit=crop',
     category: 'nigerian-dishes',
     inStock: true,
   },
@@ -266,10 +238,57 @@ export const products: Product[] = [
   {
     id: 'pr-004',
     name: 'Extra Egg (1 piece)',
-    description: 'Additional fried egg',
+    description: 'Additional boiled egg',
     price: 300,
-    image: 'https://images.unsplash.com/photo-1482049016gy7-9f7dd1db28f?w=400&h=400&fit=crop',
+    image: boiledEggImg,
     category: 'proteins',
+    inStock: true,
+  },
+
+  // ========== SNACKS ==========
+  {
+    id: 'sn-001',
+    name: 'Meat Pie',
+    description: 'Flaky pastry filled with seasoned minced meat and vegetables',
+    price: 700,
+    image: 'https://images.unsplash.com/photo-1604467794349-0b74285de7e7?w=400&h=400&fit=crop',
+    category: 'snacks',
+    inStock: true,
+  },
+  {
+    id: 'sn-002',
+    name: 'Sausage Roll',
+    description: 'Golden pastry wrapped around savory sausage',
+    price: 500,
+    image: 'https://images.unsplash.com/photo-1555954293-33c6f4a4d08e?w=400&h=400&fit=crop',
+    category: 'snacks',
+    inStock: true,
+  },
+  {
+    id: 'sn-003',
+    name: 'Chicken Pie',
+    description: 'Flaky pastry filled with seasoned chicken and vegetables',
+    price: 700,
+    image: 'https://images.unsplash.com/photo-1604467794349-0b74285de7e7?w=400&h=400&fit=crop',
+    category: 'snacks',
+    inStock: true,
+  },
+  {
+    id: 'sn-004',
+    name: 'Egg Roll',
+    description: 'Boiled egg wrapped in soft dough and fried golden',
+    price: 500,
+    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=400&fit=crop',
+    category: 'snacks',
+    inStock: true,
+  },
+  {
+    id: 'sn-005',
+    name: 'Hot Dog',
+    description: 'Grilled sausage in a soft bun with toppings',
+    price: 800,
+    image: 'https://images.unsplash.com/photo-1612392062126-4a9bf5ed8e02?w=400&h=400&fit=crop',
+    category: 'snacks',
     inStock: true,
   },
 
@@ -288,7 +307,7 @@ export const products: Product[] = [
     name: 'Fanta Orange',
     description: 'Refreshing orange flavored soft drink (50cl)',
     price: 500,
-    image: 'https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/86/0078111/1.jpg?0869',
+    image: fantaImg,
     category: 'beverages',
     inStock: true,
   },
@@ -297,7 +316,7 @@ export const products: Product[] = [
     name: 'Sprite',
     description: 'Lemon-lime flavored soft drink (50cl)',
     price: 500,
-    image: 'https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/91/7946201/1.jpg?7556',
+    image: spriteImg,
     category: 'beverages',
     inStock: true,
   },
@@ -306,7 +325,7 @@ export const products: Product[] = [
     name: '7UP',
     description: 'Crisp lemon-lime soft drink (50cl)',
     price: 500,
-    image: 'https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/51/285004/1.jpg?3862',
+    image: sevenUpImg,
     category: 'beverages',
     inStock: true,
   },
@@ -333,7 +352,7 @@ export const products: Product[] = [
     name: 'Heineken',
     description: 'Premium imported lager beer',
     price: 900,
-    image: 'https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/55/324116/1.jpg?0869',
+    image: heinekenImg,
     category: 'beverages',
     inStock: true,
   },
@@ -348,10 +367,10 @@ export const products: Product[] = [
   },
   {
     id: 'bv-009',
-    name: 'Chi Active Water',
-    description: 'Pure and refreshing spring water (75cl)',
-    price: 300,
-    image: 'https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/94/851744/1.jpg?5869',
+    name: 'Chi Active',
+    description: 'Refreshing fruit juice drink',
+    price: 500,
+    image: chiActiveImg,
     category: 'beverages',
     inStock: true,
   },
@@ -360,7 +379,7 @@ export const products: Product[] = [
     name: 'Chi Exotic',
     description: 'Exotic fruit juice blend',
     price: 500,
-    image: 'https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/65/119813/1.jpg?9571',
+    image: chiExoticImg,
     category: 'beverages',
     inStock: true,
   },
@@ -369,16 +388,16 @@ export const products: Product[] = [
     name: 'Fearless Energy Drink',
     description: 'Energy drink to keep you going',
     price: 400,
-    image: 'https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/66/3756211/1.jpg?1565',
+    image: fearlessImg,
     category: 'beverages',
     inStock: true,
   },
   {
     id: 'bv-012',
-    name: 'Malt Drink',
-    description: 'Chilled malt beverage (Maltina/Malta Guinness)',
+    name: 'Malta Guinness',
+    description: 'Chilled malt beverage with vitamins',
     price: 500,
-    image: 'https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/46/8borj/1.jpg?6855',
+    image: maltaGuinnessImg,
     category: 'beverages',
     inStock: true,
   },
