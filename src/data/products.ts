@@ -6,6 +6,8 @@ import ebaEgusiImg from '@/assets/products/eba-egusi.jpg';
 import ebaEforitoImg from '@/assets/products/eba-eforiro.jpg';
 import amalaEweduImg from '@/assets/products/amala-ewedu.jpg';
 import ofadaRiceImg from '@/assets/products/ofada-rice.jpg';
+import jollofSpaghettiImg from '@/assets/products/jollof-spaghetti.jpg';
+import yamPorridgeImg from '@/assets/products/yam-porridge.jpg';
 import cocaColaImg from '@/assets/products/coca-cola.jpg';
 import trophyImg from '@/assets/products/trophy.jpg';
 import guinnessImg from '@/assets/products/guinness.jpg';
@@ -23,6 +25,7 @@ import meatPieImg from '@/assets/products/meat-pie.jpg';
 import sausageRollImg from '@/assets/products/sausage-roll.jpg';
 import chickenPieImg from '@/assets/products/chicken-pie.jpg';
 import eggRollImg from '@/assets/products/egg-roll.jpg';
+import frankRollsImg from '@/assets/products/frank-rolls.jpg';
 import snacksCategoryImg from '@/assets/products/snacks-category.jpg';
 import bottledWaterImg from '@/assets/products/bottled-water.jpg';
 
@@ -100,7 +103,7 @@ export const products: Product[] = [
     name: 'White Rice & Stew with 2 Beef',
     description: 'Fluffy white rice with rich tomato stew and 2 pieces of beef',
     price: 1500,
-    image: jollofRiceImg,
+    image: friedRiceImg,
     category: 'nigerian-dishes',
     inStock: true,
   },
@@ -109,7 +112,7 @@ export const products: Product[] = [
     name: 'White Rice & Stew with 1 Egg',
     description: 'Fluffy white rice with rich tomato stew and 1 fried egg',
     price: 1500,
-    image: jollofRiceImg,
+    image: friedRiceImg,
     category: 'nigerian-dishes',
     inStock: true,
   },
@@ -118,7 +121,7 @@ export const products: Product[] = [
     name: 'Jollof Spaghetti',
     description: 'Nigerian-style jollof spaghetti cooked in rich tomato sauce',
     price: 1500,
-    image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=400&h=400&fit=crop',
+    image: jollofSpaghettiImg,
     category: 'nigerian-dishes',
     inStock: true,
   },
@@ -137,15 +140,6 @@ export const products: Product[] = [
     description: 'Smooth semolina swallow with jute leaf soup and 2 beef',
     price: 1500,
     image: amalaEweduImg,
-    category: 'nigerian-dishes',
-    inStock: true,
-  },
-  {
-    id: 'ng-008',
-    name: 'Semo & Eforiro Soup with 2 Beef',
-    description: 'Smooth semolina swallow with vegetable soup and 2 beef',
-    price: 1500,
-    image: ebaEforitoImg,
     category: 'nigerian-dishes',
     inStock: true,
   },
@@ -190,7 +184,7 @@ export const products: Product[] = [
     name: 'Porridge Yam',
     description: 'Soft yam porridge cooked with palm oil and vegetables',
     price: 1300,
-    image: 'https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=400&h=400&fit=crop',
+    image: yamPorridgeImg,
     category: 'nigerian-dishes',
     inStock: true,
   },
@@ -280,10 +274,10 @@ export const products: Product[] = [
   },
   {
     id: 'sn-005',
-    name: 'Hot Dog',
-    description: 'Grilled sausage in a soft bun with toppings',
+    name: 'Frank Rolls',
+    description: 'Soft bread rolls filled with savory sausage',
     price: 800,
-    image: 'https://images.unsplash.com/photo-1612392062126-4a9bf5ed8e02?w=400&h=400&fit=crop',
+    image: frankRollsImg,
     category: 'snacks',
     inStock: true,
   },
@@ -394,15 +388,6 @@ export const products: Product[] = [
     description: 'Chilled malt beverage with vitamins',
     price: 500,
     image: maltaGuinnessImg,
-    category: 'beverages',
-    inStock: true,
-  },
-  {
-    id: 'bv-013',
-    name: 'Chapman',
-    description: 'Nigerian signature cocktail mocktail',
-    price: 1000,
-    image: 'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=400&fit=crop',
     category: 'beverages',
     inStock: true,
   },

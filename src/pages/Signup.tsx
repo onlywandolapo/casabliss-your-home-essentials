@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Eye, EyeOff, Mail, Lock, User } from 'lucide-react';
+import metroMunchLogo from '@/assets/metro-munch-logo.jpg';
 
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -22,8 +23,12 @@ const Signup = () => {
           {/* Header */}
           <div className="text-center mb-8">
             <div className="inline-flex items-center gap-2 mb-4">
-              <span className="text-3xl">🍔</span>
-              <span className="font-script text-3xl text-primary">Metro Munch</span>
+              <img 
+                src={metroMunchLogo} 
+                alt="Metro Munch" 
+                className="h-12 w-12 rounded-full object-cover"
+              />
+              <span className="font-display text-3xl font-extrabold text-primary">Metro Munch</span>
             </div>
             <h1 className="font-display text-2xl font-bold text-foreground">
               Create Account
