@@ -1,14 +1,23 @@
-import { ShoppingCart, User, Sun, Moon, Menu, Search, X } from 'lucide-react';
+import { ShoppingCart, User, Sun, Moon, Menu, Search, X, LogOut } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTheme } from '@/contexts/ThemeContext';
 import { useCart } from '@/contexts/CartContext';
+import { useAuth } from '@/contexts/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 import metroMunchLogo from '@/assets/metro-munch-logo.jpg';
 
 const Header = () => {
   const { theme, toggleTheme } = useTheme();
   const { totalItems, setIsCartOpen } = useCart();
+  const { user, profile, signOut } = useAuth();
   const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -19,6 +28,11 @@ const Header = () => {
       navigate(`/products?search=${encodeURIComponent(searchQuery.trim())}`);
       setSearchQuery('');
     }
+  };
+
+  const handleSignOut = async () => {
+    await signOut();
+    navigate('/');
   };
 
   return (
@@ -87,11 +101,32 @@ const Header = () => {
             )}
           </Button>
 
-          <Link to="/login">
-            <Button variant="ghost" size="icon" className="hidden sm:flex">
-              <User className="h-5 w-5" />
-            </Button>
-          </Link>
+          {user ? (
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="icon" className="hidden sm:flex">
+                  <User className="h-5 w-5" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-48">
+                <div className="px-2 py-1.5">
+                  <p className="text-sm font-medium">{profile?.name || 'User'}</p>
+                  <p className="text-xs text-muted-foreground truncate">{user.email}</p>
+                </div>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem onClick={handleSignOut} className="text-destructive">
+                  <LogOut className="h-4 w-4 mr-2" />
+                  Sign out
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          ) : (
+            <Link to="/login">
+              <Button variant="ghost" size="icon" className="hidden sm:flex">
+                <User className="h-5 w-5" />
+              </Button>
+            </Link>
+          )}
 
           <Button
             variant="outline"
@@ -157,13 +192,25 @@ const Header = () => {
               >
                 Categories
               </Link>
-              <Link
-                to="/login"
-                className="px-4 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-lg"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Login / Sign Up
-              </Link>
+              {user ? (
+                <button
+                  onClick={() => {
+                    handleSignOut();
+                    setMobileMenuOpen(false);
+                  }}
+                  className="px-4 py-2 text-sm font-medium text-destructive hover:bg-muted rounded-lg text-left w-full"
+                >
+                  Sign Out
+                </button>
+              ) : (
+                <Link
+                  to="/login"
+                  className="px-4 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-lg"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Login / Sign Up
+                </Link>
+              )}
             </nav>
             <div className="flex items-center gap-2 px-4">
               <span className="text-sm text-muted-foreground">Theme:</span>
