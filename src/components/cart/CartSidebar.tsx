@@ -1,7 +1,11 @@
-import { X, Plus, Minus, ShoppingBag, Trash2 } from 'lucide-react';
+import { X, Plus, Minus, ShoppingBag, Trash2, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/contexts/CartContext';
-import { useEffect } from 'react';
+import { useAuth } from '@/contexts/AuthContext';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { supabase } from '@/integrations/supabase/client';
+import { useToast } from '@/hooks/use-toast';
 
 const formatPrice = (price: number) => {
   return new Intl.NumberFormat('en-NG', {
@@ -22,6 +26,82 @@ const CartSidebar = () => {
     totalPrice,
     clearCart,
   } = useCart();
+  const { user, profile } = useAuth();
+  const navigate = useNavigate();
+  const { toast } = useToast();
+  const [isPlacingOrder, setIsPlacingOrder] = useState(false);
+
+  const handlePlaceOrder = async () => {
+    // Check if user is authenticated
+    if (!user) {
+      setIsCartOpen(false);
+      toast({
+        title: 'Please sign in',
+        description: 'You need to be signed in to place an order.',
+      });
+      navigate('/login');
+      return;
+    }
+
+    setIsPlacingOrder(true);
+
+    try {
+      // Get current session for auth token
+      const { data: { session } } = await supabase.auth.getSession();
+      
+      if (!session) {
+        toast({
+          title: 'Session expired',
+          description: 'Please sign in again to place your order.',
+          variant: 'destructive',
+        });
+        navigate('/login');
+        return;
+      }
+
+      // Prepare order items - only send product_id and quantity
+      // Price will be validated server-side
+      const orderItems = items.map(item => ({
+        product_id: item.id,
+        quantity: item.quantity,
+      }));
+
+      // Call the edge function
+      const response = await supabase.functions.invoke('create-order', {
+        body: {
+          items: orderItems,
+          delivery_address: profile?.delivery_address || undefined,
+          notes: '',
+        },
+      });
+
+      if (response.error) {
+        throw new Error(response.error.message || 'Failed to place order');
+      }
+
+      if (!response.data?.success) {
+        throw new Error(response.data?.error || 'Failed to place order');
+      }
+
+      // Success!
+      clearCart();
+      setIsCartOpen(false);
+      toast({
+        title: 'Order placed successfully!',
+        description: `Order total: ${formatPrice(response.data.order.total_price)}`,
+      });
+
+    } catch (error) {
+      console.error('Error placing order:', error);
+      toast({
+        title: 'Failed to place order',
+        description: error instanceof Error ? error.message : 'Please try again.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsPlacingOrder(false);
+    }
+  };
 
   // Prevent body scroll when cart is open
   useEffect(() => {
@@ -135,8 +215,21 @@ const CartSidebar = () => {
                   {formatPrice(totalPrice)}
                 </span>
               </div>
-              <Button variant="hero" size="lg" className="w-full">
-                Place Order
+              <Button 
+                variant="hero" 
+                size="lg" 
+                className="w-full"
+                onClick={handlePlaceOrder}
+                disabled={isPlacingOrder}
+              >
+                {isPlacingOrder ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Placing Order...
+                  </>
+                ) : (
+                  'Place Order'
+                )}
               </Button>
               <Button
                 variant="ghost"
