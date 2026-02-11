@@ -2,10 +2,9 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import ProductCard from '@/components/products/ProductCard';
 import { products } from '@/data/products';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Flame } from 'lucide-react';
 
 const FeaturedProducts = () => {
-  // Get a mix of popular items from different categories
   const featuredProducts = products.slice(0, 8);
 
   return (
@@ -13,6 +12,10 @@ const FeaturedProducts = () => {
       <div className="container">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
           <div>
+            <div className="flex items-center gap-2 mb-2">
+              <Flame className="h-5 w-5 text-orange-500" />
+              <p className="text-primary font-medium text-sm uppercase tracking-widest">Most Ordered</p>
+            </div>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
               Popular Dishes
             </h2>
@@ -21,9 +24,9 @@ const FeaturedProducts = () => {
             </p>
           </div>
           <Link to="/products">
-            <Button variant="outline">
+            <Button variant="outline" className="group">
               View Full Menu
-              <ArrowRight className="h-4 w-4" />
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
         </div>
