@@ -1,4 +1,4 @@
-import { ArrowRight, Star, Clock, MapPin } from 'lucide-react';
+import { ArrowRight, Star, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import heroBistro from '@/assets/hero-bistro.jpg';
@@ -72,18 +72,6 @@ const Hero = () => {
                 alt="Customers enjoying food at Metro Munch"
                 className="relative w-full h-[500px] object-cover rounded-3xl card-shadow transition-transform duration-500 group-hover:scale-[1.02]"
               />
-              {/* Floating badge */}
-              <div className="absolute -bottom-4 -left-4 bg-card rounded-2xl p-4 card-shadow animate-fade-in border border-border" style={{ animationDelay: '0.5s' }}>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                    <MapPin className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="font-display text-sm font-semibold text-foreground">by Eridan</p>
-                    <p className="text-xs text-muted-foreground">Order & Enjoy</p>
-                  </div>
-                </div>
-              </div>
               {/* Floating rating */}
               <div className="absolute -top-4 -right-4 bg-card rounded-2xl px-4 py-3 card-shadow animate-fade-in border border-border" style={{ animationDelay: '0.7s' }}>
                 <div className="flex items-center gap-2">
