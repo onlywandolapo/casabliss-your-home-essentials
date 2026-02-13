@@ -1,7 +1,27 @@
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Star, Send } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Textarea } from '@/components/ui/textarea';
+import { toast } from 'sonner';
 import metroMunchLogo from '@/assets/metro-munch-logo.jpg';
 
 const Footer = () => {
+  const [rating, setRating] = useState(0);
+  const [hoveredStar, setHoveredStar] = useState(0);
+  const [feedback, setFeedback] = useState('');
+
+  const handleSubmitFeedback = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (rating === 0) {
+      toast.error('Please select a rating');
+      return;
+    }
+    toast.success('Thank you for your feedback! 🎉');
+    setRating(0);
+    setFeedback('');
+  };
+
   return (
     <footer className="border-t border-border bg-card">
       <div className="container py-12">
@@ -21,26 +41,41 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-display font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/products" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Full Menu
-                </Link>
-              </li>
-              <li>
-                <Link to="/categories" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Categories
-                </Link>
-              </li>
-            </ul>
+          {/* Feedback */}
+          <div className="md:col-span-1">
+            <h4 className="font-display font-semibold mb-4">Give Us Feedback</h4>
+            <form onSubmit={handleSubmitFeedback} className="space-y-3">
+              <div className="flex gap-1">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <button
+                    key={star}
+                    type="button"
+                    onClick={() => setRating(star)}
+                    onMouseEnter={() => setHoveredStar(star)}
+                    onMouseLeave={() => setHoveredStar(0)}
+                    className="transition-transform hover:scale-125"
+                  >
+                    <Star
+                      className={`h-5 w-5 transition-colors ${
+                        star <= (hoveredStar || rating)
+                          ? 'fill-yellow-400 text-yellow-400'
+                          : 'text-muted-foreground'
+                      }`}
+                    />
+                  </button>
+                ))}
+              </div>
+              <Textarea
+                placeholder="Tell us about your experience..."
+                value={feedback}
+                onChange={(e) => setFeedback(e.target.value)}
+                className="resize-none h-20 text-sm"
+              />
+              <Button type="submit" size="sm" className="w-full group">
+                Send Feedback
+                <Send className="h-3.5 w-3.5 ml-1 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </form>
           </div>
 
           {/* Categories */}
