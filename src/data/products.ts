@@ -28,6 +28,8 @@ import eggRollImg from '@/assets/products/egg-roll.jpg';
 import frankRollsImg from '@/assets/products/frank-rolls.jpg';
 import snacksCategoryImg from '@/assets/products/snacks-category.jpg';
 import bottledWaterImg from '@/assets/products/bottled-water.jpg';
+import nigerianDishesCatImg from '@/assets/categories/nigerian-dishes.jpg';
+import snacksCatImg from '@/assets/categories/snacks.jpg';
 
 export interface Product {
   id: string;
@@ -53,7 +55,7 @@ export const categories: Category[] = [
     name: 'Nigerian Dishes',
     description: 'Authentic local favorites',
     icon: '🍛',
-    image: jollofRiceImg,
+    image: nigerianDishesCatImg,
   },
   {
     id: 'proteins',
@@ -67,7 +69,7 @@ export const categories: Category[] = [
     name: 'Snacks',
     description: 'Tasty quick bites',
     icon: '🥧',
-    image: snacksCategoryImg,
+    image: snacksCatImg,
   },
   {
     id: 'beverages',
@@ -240,7 +242,7 @@ export const products: Product[] = [
     id: 'sn-001',
     name: 'Meat Pie',
     description: 'Flaky pastry filled with seasoned minced meat and vegetables',
-    price: 700,
+    price: 800,
     image: meatPieImg,
     category: 'snacks',
     inStock: true,
@@ -249,7 +251,7 @@ export const products: Product[] = [
     id: 'sn-002',
     name: 'Sausage Roll',
     description: 'Golden pastry wrapped around savory sausage',
-    price: 500,
+    price: 700,
     image: sausageRollImg,
     category: 'snacks',
     inStock: true,
@@ -258,7 +260,7 @@ export const products: Product[] = [
     id: 'sn-003',
     name: 'Chicken Pie',
     description: 'Flaky pastry filled with seasoned chicken and vegetables',
-    price: 700,
+    price: 800,
     image: chickenPieImg,
     category: 'snacks',
     inStock: true,
@@ -276,7 +278,7 @@ export const products: Product[] = [
     id: 'sn-005',
     name: 'Frank Rolls',
     description: 'Soft bread rolls filled with savory sausage',
-    price: 800,
+    price: 750,
     image: frankRollsImg,
     category: 'snacks',
     inStock: true,
@@ -323,7 +325,7 @@ export const products: Product[] = [
     id: 'bv-005',
     name: 'Trophy Lager',
     description: 'Premium Nigerian lager beer',
-    price: 700,
+    price: 1000,
     image: trophyImg,
     category: 'beverages',
     inStock: true,
@@ -332,7 +334,7 @@ export const products: Product[] = [
     id: 'bv-006',
     name: 'Guinness Stout',
     description: 'Rich and creamy foreign extra stout',
-    price: 800,
+    price: 1000,
     image: guinnessImg,
     category: 'beverages',
     inStock: true,
@@ -350,7 +352,7 @@ export const products: Product[] = [
     id: 'bv-008',
     name: 'Goldberg Lager',
     description: 'Premium Nigerian lager with a smooth taste',
-    price: 600,
+    price: 1100,
     image: goldbergImg,
     category: 'beverages',
     inStock: true,
@@ -359,7 +361,7 @@ export const products: Product[] = [
     id: 'bv-009',
     name: 'Chi Active',
     description: 'Refreshing fruit juice drink',
-    price: 500,
+    price: 800,
     image: chiActiveImg,
     category: 'beverages',
     inStock: true,
@@ -386,7 +388,7 @@ export const products: Product[] = [
     id: 'bv-012',
     name: 'Malta Guinness',
     description: 'Chilled malt beverage with vitamins',
-    price: 500,
+    price: 600,
     image: maltaGuinnessImg,
     category: 'beverages',
     inStock: true,
