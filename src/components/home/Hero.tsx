@@ -19,7 +19,7 @@ const Hero = () => {
               <span className="animate-bounce">🔥</span>
               <span>Fast Food • Nigerian Cuisine</span>
             </div>
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-semibold text-foreground leading-tight">Taste the Flavor of Nigeria!<span className="text-gradient">Flavor</span> of Nigeria
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-semibold text-foreground leading-tight">Taste the <span className="text-gradient">Flavor</span> of Nigeria!
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-lg leading-relaxed">From sizzling jollof to crunchy snacks and chilled drinks — your favorite Nigerian meals, delivered fast and fresh.</p>
             <div className="flex flex-wrap gap-4">
