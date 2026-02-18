@@ -28,6 +28,7 @@ import eggRollImg from '@/assets/products/egg-roll.jpg';
 import frankRollsImg from '@/assets/products/frank-rolls.jpg';
 import snacksCategoryImg from '@/assets/products/snacks-category.jpg';
 import bottledWaterImg from '@/assets/products/bottled-water.jpg';
+import whiteRiceImg from '@/assets/products/white-rice.jpg';
 import nigerianDishesCatImg from '@/assets/categories/nigerian-dishes.jpg';
 import snacksCatImg from '@/assets/categories/snacks.jpg';
 
@@ -105,7 +106,7 @@ export const products: Product[] = [
     name: 'White Rice & Stew with 2 Beef',
     description: 'Fluffy white rice with rich tomato stew and 2 pieces of beef',
     price: 1500,
-    image: friedRiceImg,
+    image: whiteRiceImg,
     category: 'nigerian-dishes',
     inStock: true,
   },
@@ -114,7 +115,7 @@ export const products: Product[] = [
     name: 'White Rice & Stew with 1 Egg',
     description: 'Fluffy white rice with rich tomato stew and 1 fried egg',
     price: 1500,
-    image: friedRiceImg,
+    image: whiteRiceImg,
     category: 'nigerian-dishes',
     inStock: true,
   },
