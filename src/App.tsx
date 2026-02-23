@@ -14,6 +14,9 @@ import Index from "./pages/Index";
 import Products from "./pages/Products";
 import Categories from "./pages/Categories";
 import ProductDetail from "./pages/ProductDetail";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import FAQs from "./pages/FAQs";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import NotFound from "./pages/NotFound";
@@ -49,6 +52,9 @@ const App = () => (
                     <Route path="/products" element={<Products />} />
                     <Route path="/product/:productId" element={<ProductDetail />} />
                     <Route path="/categories" element={<Categories />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/contact" element={<Contact />} />
+                    <Route path="/faqs" element={<FAQs />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/signup" element={<Signup />} />
                     <Route path="*" element={<NotFound />} />
