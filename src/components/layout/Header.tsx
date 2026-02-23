@@ -14,6 +14,15 @@ import {
 } from '@/components/ui/dropdown-menu';
 import metroMunchLogo from '@/assets/metro-munch-logo.jpg';
 
+const navLinks = [
+  { to: '/', label: 'Home' },
+  { to: '/products', label: 'Menu' },
+  { to: '/products', label: 'Order Online' },
+  { to: '/about', label: 'About Us' },
+  { to: '/contact', label: 'Contact' },
+  { to: '/faqs', label: 'FAQs' },
+];
+
 const Header = () => {
   const { theme, toggleTheme } = useTheme();
   const { totalItems, setIsCartOpen } = useCart();
@@ -27,6 +36,7 @@ const Header = () => {
     if (searchQuery.trim()) {
       navigate(`/products?search=${encodeURIComponent(searchQuery.trim())}`);
       setSearchQuery('');
+      setMobileMenuOpen(false);
     }
   };
 
@@ -39,7 +49,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between gap-4">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2 shrink-0">
           <img 
             src={metroMunchLogo} 
             alt="Metro Munch" 
@@ -51,29 +61,20 @@ const Header = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6">
-          <Link
-            to="/"
-            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-          >
-            Home
-          </Link>
-          <Link
-            to="/products"
-            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-          >
-            Menu
-          </Link>
-          <Link
-            to="/categories"
-            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-          >
-            Categories
-          </Link>
+        <nav className="hidden lg:flex items-center gap-5">
+          {navLinks.map((link) => (
+            <Link
+              key={link.label}
+              to={link.to}
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap"
+            >
+              {link.label}
+            </Link>
+          ))}
         </nav>
 
         {/* Search Bar */}
-        <form onSubmit={handleSearch} className="hidden md:flex flex-1 max-w-md mx-4">
+        <form onSubmit={handleSearch} className="hidden md:flex flex-1 max-w-xs mx-4">
           <div className="relative w-full">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <input
@@ -146,7 +147,7 @@ const Header = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="lg:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -156,7 +157,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-border bg-background animate-fade-in">
+        <div className="lg:hidden border-t border-border bg-background animate-fade-in">
           <div className="container py-4 space-y-4">
             <form onSubmit={handleSearch}>
               <div className="relative">
@@ -171,27 +172,16 @@ const Header = () => {
               </div>
             </form>
             <nav className="flex flex-col gap-2">
-              <Link
-                to="/"
-                className="px-4 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-lg"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Home
-              </Link>
-              <Link
-                to="/products"
-                className="px-4 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-lg"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Menu
-              </Link>
-              <Link
-                to="/categories"
-                className="px-4 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-lg"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Categories
-              </Link>
+              {navLinks.map((link) => (
+                <Link
+                  key={link.label}
+                  to={link.to}
+                  className="px-4 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-lg"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
               {user ? (
                 <button
                   onClick={() => {
