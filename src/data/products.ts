@@ -31,6 +31,7 @@ import bottledWaterImg from '@/assets/products/bottled-water.jpg';
 import whiteRiceImg from '@/assets/products/white-rice.jpg';
 import nigerianDishesCatImg from '@/assets/categories/nigerian-dishes.jpg';
 import snacksCatImg from '@/assets/categories/snacks.jpg';
+import proteinsCatImg from '@/assets/categories/proteins.jpg';
 
 export interface Product {
   id: string;
