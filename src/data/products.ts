@@ -48,7 +48,6 @@ export interface Category {
   id: string;
   name: string;
   description: string;
-  icon: string;
   image: string;
 }
 
@@ -57,28 +56,24 @@ export const categories: Category[] = [
     id: 'nigerian-dishes',
     name: 'Nigerian Dishes',
     description: 'Authentic local favorites',
-    icon: '🍛',
     image: nigerianDishesCatImg,
   },
   {
     id: 'proteins',
     name: 'Extra Proteins',
     description: 'Add more protein to your meal',
-    icon: '🍖',
     image: proteinsCatImg,
   },
   {
     id: 'snacks',
     name: 'Snacks',
     description: 'Tasty quick bites',
-    icon: '🥧',
     image: snacksCatImg,
   },
   {
     id: 'beverages',
     name: 'Beverages',
     description: 'Refreshing drinks',
-    icon: '🥤',
     image: cocaColaImg,
   },
 ];
