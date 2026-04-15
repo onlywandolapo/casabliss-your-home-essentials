@@ -143,7 +143,7 @@ const Products = () => {
                 size="sm"
                 onClick={() => setSearchParams({ category: cat.id })}
               >
-                {cat.icon} {cat.name}
+                {cat.name}
               </Button>
             ))}
           </div>
