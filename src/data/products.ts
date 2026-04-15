@@ -64,7 +64,7 @@ export const categories: Category[] = [
     name: 'Extra Proteins',
     description: 'Add more protein to your meal',
     icon: '🍖',
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=600&h=450&fit=crop',
+    image: proteinsCatImg,
   },
   {
     id: 'snacks',
