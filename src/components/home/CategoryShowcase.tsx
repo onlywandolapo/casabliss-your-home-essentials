@@ -31,7 +31,6 @@ const CategoryShowcase = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/30 to-transparent group-hover:from-primary/80 group-hover:via-primary/20 transition-all duration-500" />
               <div className="absolute inset-0 flex flex-col items-center justify-end p-5 text-center">
-                <span className="text-4xl mb-2 transition-transform duration-300 group-hover:scale-125 group-hover:-translate-y-1">{category.icon}</span>
                 <h3 className="font-display font-semibold text-background text-lg">
                   {category.name}
                 </h3>

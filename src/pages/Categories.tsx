@@ -36,16 +36,13 @@ const Categories = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/40 to-transparent" />
               <div className="absolute inset-0 flex flex-col justify-end p-6">
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="text-4xl">{category.icon}</span>
-                  <div>
-                    <h2 className="font-body text-2xl font-semibold text-background tracking-wide">
-                      {category.name}
-                    </h2>
-                    <p className="text-background/80 text-sm font-body">
-                      {getProductCount(category.id)} items
-                    </p>
-                  </div>
+                <div className="mb-2">
+                  <h2 className="font-body text-2xl font-semibold text-background tracking-wide">
+                    {category.name}
+                  </h2>
+                  <p className="text-background/80 text-sm font-body">
+                    {getProductCount(category.id)} items
+                  </p>
                 </div>
                 <p className="text-background/90 text-sm mb-4 font-body">{category.description}</p>
                 <div className="flex items-center gap-2 text-background font-medium font-body group-hover:gap-3 transition-all">
