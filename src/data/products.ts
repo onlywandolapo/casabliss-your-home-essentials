@@ -21,6 +21,7 @@ import chiExoticImg from '@/assets/products/chi-exotic.jpg';
 import fearlessImg from '@/assets/products/fearless.jpg';
 import maltaGuinnessImg from '@/assets/products/malta-guinness.jpg';
 import boiledEggImg from '@/assets/products/boiled-egg.jpg';
+import beefImg from '@/assets/products/beef.jpg';
 import meatPieImg from '@/assets/products/meat-pie.jpg';
 import sausageRollImg from '@/assets/products/sausage-roll.jpg';
 import chickenPieImg from '@/assets/products/chicken-pie.jpg';
@@ -207,7 +208,7 @@ export const products: Product[] = [
     name: 'Extra Beef (1 piece)',
     description: 'Additional piece of seasoned beef',
     price: 200,
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=400&h=400&fit=crop',
+    image: beefImg,
     category: 'proteins',
     inStock: true,
   },
@@ -225,7 +226,7 @@ export const products: Product[] = [
     name: 'Extra Fish (1 piece)',
     description: 'Additional piece of fried or grilled fish',
     price: 800,
-    image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400&h=400&fit=crop',
+    image: proteinsCatImg,
     category: 'proteins',
     inStock: true,
   },
