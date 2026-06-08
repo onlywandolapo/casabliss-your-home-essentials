@@ -34,6 +34,28 @@ import nigerianDishesCatImg from '@/assets/categories/nigerian-dishes.jpg';
 import snacksCatImg from '@/assets/categories/snacks.jpg';
 import proteinsCatImg from '@/assets/categories/proteins.jpg';
 
+// New product images (generated)
+import friedriceJollofImg from '@/assets/products/friedrice-jollof.jpg';
+import whitericeSpagImg from '@/assets/products/whiterice-spag.jpg';
+import friedriceSpagImg from '@/assets/products/friedrice-spag.jpg';
+import spaghettiImg from '@/assets/products/spaghetti.jpg';
+import ebaBitterleafImg from '@/assets/products/eba-bitterleaf.jpg';
+import semoEfoImg from '@/assets/products/semo-efo.jpg';
+import ebaPlainImg from '@/assets/products/eba.jpg';
+import semovitaImg from '@/assets/products/semovita.jpg';
+import poundedYamImg from '@/assets/products/pounded-yam.jpg';
+import boiledYamImg from '@/assets/products/boiled-yam.jpg';
+import soupSmallImg from '@/assets/products/soup-small.jpg';
+import soupLargeImg from '@/assets/products/soup-large.jpg';
+import extraSwallowImg from '@/assets/products/extra-swallow.jpg';
+import ofadaSauceImg from '@/assets/products/ofada-sauce.jpg';
+import beansPorridgeImg from '@/assets/products/beans-porridge.jpg';
+import ewaAgoyinImg from '@/assets/products/ewa-agoyin.jpg';
+import papImg from '@/assets/products/pap.jpg';
+import indomieImg from '@/assets/products/indomie.jpg';
+import indomieHotdogImg from '@/assets/products/indomie-hotdog.jpg';
+import friedFishImg from '@/assets/products/fried-fish.jpg';
+
 export interface Product {
   id: string;
   name: string;
