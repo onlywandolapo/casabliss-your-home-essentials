@@ -1,11 +1,22 @@
 import { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Send, Loader2 } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, Loader2, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from 'sonner';
 
-const contactInfo = [
+const EMAIL = 'metromunchng@gmail.com';
+const PHONE_DISPLAY = '+234 902 318 2683';
+const PHONE_TEL = 'tel:+2349023182683';
+const WHATSAPP_URL = 'https://wa.me/2349023182683';
+
+const contactInfo: Array<{
+  icon: typeof MapPin;
+  title: string;
+  details: string[];
+  href?: string;
+  external?: boolean;
+}> = [
   {
     icon: MapPin,
     title: 'Visit Us',
@@ -14,12 +25,21 @@ const contactInfo = [
   {
     icon: Phone,
     title: 'Call Us',
-    details: ['+234 902 318 2683'],
+    details: [PHONE_DISPLAY],
+    href: PHONE_TEL,
+  },
+  {
+    icon: MessageCircle,
+    title: 'WhatsApp',
+    details: ['Chat instantly'],
+    href: WHATSAPP_URL,
+    external: true,
   },
   {
     icon: Mail,
     title: 'Email Us',
-    details: ['metromunchng@gmail.com'],
+    details: [EMAIL],
+    href: `mailto:${EMAIL}`,
   },
   {
     icon: Clock,
@@ -35,12 +55,16 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate submission
+    // Open the user's mail client with a pre-filled message addressed to Metro Munch.
+    const subject = formData.subject?.trim() || 'Website enquiry';
+    const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`;
+    const mailto = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
     setTimeout(() => {
-      toast.success('Message sent! We\'ll get back to you soon. 🎉');
+      toast.success("Opening your email app — just hit send!");
       setFormData({ name: '', email: '', subject: '', message: '' });
       setIsSubmitting(false);
-    }, 1000);
+    }, 600);
   };
 
   return (
@@ -60,22 +84,39 @@ const Contact = () => {
       {/* Contact Info Cards */}
       <section className="py-16">
         <div className="container">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {contactInfo.map((item, index) => (
-              <div
-                key={index}
-                className="group text-center p-6 rounded-2xl bg-card border border-border/50 card-shadow hover:card-shadow-hover hover:-translate-y-1 transition-all duration-300 animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 text-primary mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
-                  <item.icon className="h-5 w-5" />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-16">
+            {contactInfo.map((item, index) => {
+              const inner = (
+                <>
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 text-primary mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                    <item.icon className="h-5 w-5" />
+                  </div>
+                  <h3 className="font-display font-semibold text-foreground mb-2">{item.title}</h3>
+                  {item.details.map((line, i) => (
+                    <p key={i} className="text-sm text-muted-foreground break-words">{line}</p>
+                  ))}
+                </>
+              );
+              const className =
+                'group text-center p-6 rounded-2xl bg-card border border-border/50 card-shadow hover:card-shadow-hover hover:-translate-y-1 transition-all duration-300 animate-fade-in';
+              const style = { animationDelay: `${index * 0.1}s` } as React.CSSProperties;
+              return item.href ? (
+                <a
+                  key={index}
+                  href={item.href}
+                  target={item.external ? '_blank' : undefined}
+                  rel={item.external ? 'noopener noreferrer' : undefined}
+                  className={className}
+                  style={style}
+                >
+                  {inner}
+                </a>
+              ) : (
+                <div key={index} className={className} style={style}>
+                  {inner}
                 </div>
-                <h3 className="font-display font-semibold text-foreground mb-2">{item.title}</h3>
-                {item.details.map((line, i) => (
-                  <p key={i} className="text-sm text-muted-foreground">{line}</p>
-                ))}
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* Contact Form + Map */}
