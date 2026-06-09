@@ -1,10 +1,34 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { Star, Send, Instagram, Facebook, Twitter, Phone, MapPin, Mail } from 'lucide-react';
+import { Star, Send, Instagram, Facebook, Linkedin, Phone, MapPin, Mail, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from 'sonner';
 import metroMunchLogo from '@/assets/metro-munch-logo.jpg';
+
+// X (Twitter) and TikTok aren't in lucide-react — inline brand glyphs.
+const XIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
+const TikTokIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V9.05a8.16 8.16 0 0 0 4.77 1.52V7.12a4.85 4.85 0 0 1-1.84-.43z" />
+  </svg>
+);
+
+const SOCIALS = [
+  { name: 'Instagram', href: 'https://www.instagram.com/eat_metromunch/', Icon: Instagram },
+  { name: 'X (Twitter)', href: 'https://x.com/Metromunchng', Icon: XIcon },
+  { name: 'Facebook', href: 'https://www.facebook.com/share/1EVqpkuecr/', Icon: Facebook },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/company/metro-munch/', Icon: Linkedin },
+  { name: 'TikTok', href: 'https://www.tiktok.com/@metro.munch4', Icon: TikTokIcon },
+];
+
+const PHONE_DISPLAY = '+234 902 318 2683';
+const WHATSAPP_URL = 'https://wa.me/2349023182683';
+const EMAIL = 'metromunchng@gmail.com';
 
 const Footer = () => {
   const [rating, setRating] = useState(0);
@@ -40,34 +64,19 @@ const Footer = () => {
               Your favorite fast food spot for authentic Nigerian dishes and delicious snacks. Quality food, fast delivery!
             </p>
             {/* Social Media */}
-            <div className="flex gap-3 pt-2">
-              <a
-                href="https://instagram.com/metromunchng"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
-                aria-label="Follow us on Instagram"
-              >
-                <Instagram className="h-4 w-4" />
-              </a>
-              <a
-                href="https://facebook.com/metromunchng"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
-                aria-label="Follow us on Facebook"
-              >
-                <Facebook className="h-4 w-4" />
-              </a>
-              <a
-                href="https://twitter.com/metromunchng"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
-                aria-label="Follow us on Twitter"
-              >
-                <Twitter className="h-4 w-4" />
-              </a>
+            <div className="flex flex-wrap gap-3 pt-2">
+              {SOCIALS.map(({ name, href, Icon }) => (
+                <a
+                  key={name}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
+                  aria-label={`Follow us on ${name}`}
+                >
+                  <Icon className="h-4 w-4" />
+                </a>
+              ))}
             </div>
           </div>
 
@@ -89,11 +98,32 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex items-start gap-2">
                 <Mail className="h-4 w-4 mt-0.5 text-primary shrink-0" />
-                <span>metromunchng@gmail.com</span>
+                <a
+                  href={`mailto:${EMAIL}`}
+                  className="hover:text-primary transition-colors break-all"
+                >
+                  {EMAIL}
+                </a>
               </li>
               <li className="flex items-start gap-2">
                 <Phone className="h-4 w-4 mt-0.5 text-primary shrink-0" />
-                <span>+234 902 318 2683</span>
+                <a
+                  href={`tel:+2349023182683`}
+                  className="hover:text-primary transition-colors"
+                >
+                  {PHONE_DISPLAY}
+                </a>
+              </li>
+              <li className="flex items-start gap-2">
+                <MessageCircle className="h-4 w-4 mt-0.5 text-primary shrink-0" />
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors"
+                >
+                  Chat with us on WhatsApp
+                </a>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 mt-0.5 text-primary shrink-0" />
