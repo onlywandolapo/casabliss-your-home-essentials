@@ -1,5 +1,5 @@
 import { Utensils, Heart, ShieldCheck, Users, Clock, MapPin, UserRound } from 'lucide-react';
-import heroBistro from '@/assets/hero-bistro.jpg';
+import aboutSkyline from '@/assets/about-metropolitan-skyline.jpg';
 import metroMunchLogo from '@/assets/metro-munch-logo.jpg';
 
 const values = [
@@ -38,12 +38,14 @@ const About = () => {
       {/* Hero Banner */}
       <section className="relative h-[50vh] min-h-[360px] flex items-center justify-center overflow-hidden">
         <img
-          src={heroBistro}
-          alt="Metro Munch restaurant interior"
+          src={aboutSkyline}
+          alt="Metropolitan city skyline at golden hour"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-foreground/60" />
+        <div className="absolute inset-0 bg-gradient-to-br from-foreground/75 via-foreground/45 to-primary/45" />
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent" />
         <div className="relative text-center text-background z-10 px-4">
+          <div className="mx-auto mb-5 h-1.5 w-24 rounded-full bg-accent shadow-[0_0_28px_hsl(var(--accent)/0.7)]" />
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold mb-4">
             About Metro Munch
           </h1>
@@ -76,7 +78,7 @@ const About = () => {
             </div>
             <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
               <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl blur-2xl opacity-60" />
+                <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 to-accent/30 rounded-3xl blur-2xl opacity-70" />
                 <img
                   src={metroMunchLogo}
                   alt="Metro Munch logo"
@@ -144,11 +146,11 @@ const About = () => {
                 className="group text-center p-8 rounded-2xl bg-card border border-border/50 card-shadow hover:card-shadow-hover hover:-translate-y-2 transition-all duration-300 animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/10 text-primary mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
-                  <UserRound className="h-9 w-9" />
+                <div className="mx-auto mb-5 flex h-24 w-24 items-center justify-center rounded-full border-4 border-accent/60 bg-primary/10 text-primary ring-4 ring-accent/15 group-hover:border-accent group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                  <UserRound className="h-10 w-10" />
                 </div>
                 <h3 className="font-display font-semibold text-foreground mb-1">{member.name}</h3>
-                <p className="text-sm text-primary font-medium">{member.role}</p>
+                <p className="text-sm text-primary font-medium"><span className="inline-block h-2 w-2 rounded-full bg-accent mr-2 align-middle" />{member.role}</p>
               </div>
             ))}
           </div>
