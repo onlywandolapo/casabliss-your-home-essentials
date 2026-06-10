@@ -1,4 +1,4 @@
-import { Utensils, Heart, ShieldCheck, Users, Clock, MapPin } from 'lucide-react';
+import { Utensils, Heart, ShieldCheck, Users, Clock, MapPin, UserRound } from 'lucide-react';
 import heroBistro from '@/assets/hero-bistro.jpg';
 import metroMunchLogo from '@/assets/metro-munch-logo.jpg';
 
@@ -23,6 +23,13 @@ const values = [
     title: 'Community Focused',
     description: 'Metro Munch is more than food — we\'re building a community of food lovers across Lagos.',
   },
+];
+
+const team = [
+  { name: 'Mr. Destiny Agbanimu', role: 'Founder' },
+  { name: 'Hon. Remi Odunsi', role: 'Co-Founder' },
+  { name: 'Mrs. Oluwaseun Adeniji', role: 'Business Manager' },
+  { name: 'Mrs. Mercy Bamidele', role: 'Operations Manager' },
 ];
 
 const About = () => {
@@ -115,6 +122,33 @@ const About = () => {
                 </div>
                 <h3 className="font-display font-semibold text-foreground mb-2">{value.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{value.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Team */}
+      <section className="py-20 bg-muted/30">
+        <div className="container">
+          <div className="text-center mb-12">
+            <p className="text-primary font-medium text-sm uppercase tracking-widest mb-2">Meet the Team</p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
+              The People Behind Metro Munch
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {team.map((member, index) => (
+              <div
+                key={member.name}
+                className="group text-center p-8 rounded-2xl bg-card border border-border/50 card-shadow hover:card-shadow-hover hover:-translate-y-2 transition-all duration-300 animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/10 text-primary mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                  <UserRound className="h-9 w-9" />
+                </div>
+                <h3 className="font-display font-semibold text-foreground mb-1">{member.name}</h3>
+                <p className="text-sm text-primary font-medium">{member.role}</p>
               </div>
             ))}
           </div>
