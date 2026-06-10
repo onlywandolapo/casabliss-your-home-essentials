@@ -1,8 +1,6 @@
 import { Utensils, Heart, ShieldCheck, Users, Clock, MapPin, UserRound } from 'lucide-react';
 import aboutSkyline from '@/assets/about-metropolitan-skyline.jpg';
 import metroMunchLogo from '@/assets/metro-munch-logo.jpg';
-import destinyPlaceholder from '@/assets/team/destiny-placeholder.jpg';
-import remiPlaceholder from '@/assets/team/remi-placeholder.jpg';
 
 const values = [
   {
@@ -28,8 +26,8 @@ const values = [
 ];
 
 const team = [
-  { name: 'Mr. Destiny Agbanimu', role: 'Founder', image: destinyPlaceholder },
-  { name: 'Hon. Remi Odunsi', role: 'Co-Founder', image: remiPlaceholder },
+  { name: 'Mr. Destiny Agbanimu', role: 'Founder' },
+  { name: 'Hon. Remi Odunsi', role: 'Co-Founder' },
   { name: 'Mrs. Oluwaseun Adeniji', role: 'Business Manager' },
   { name: 'Mrs. Mercy Bamidele', role: 'Operations Manager' },
 ];
@@ -148,20 +146,8 @@ const About = () => {
                 className="group text-center p-8 rounded-2xl bg-card border border-border/50 card-shadow hover:card-shadow-hover hover:-translate-y-2 transition-all duration-300 animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="mx-auto mb-5 h-24 w-24 overflow-hidden rounded-full border-4 border-accent/60 bg-primary/10 text-primary ring-4 ring-accent/15 group-hover:border-accent transition-colors duration-300">
-                  {'image' in member ? (
-                    <img
-                      src={member.image}
-                      alt={`${member.name}, ${member.role}`}
-                      className="h-full w-full object-cover"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  ) : (
-                    <div className="flex h-full w-full items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
-                      <UserRound className="h-10 w-10" />
-                    </div>
-                  )}
+                <div className="mx-auto mb-5 flex h-24 w-24 items-center justify-center rounded-full border-4 border-accent/60 bg-primary/10 text-primary ring-4 ring-accent/15 group-hover:border-accent group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                  <UserRound className="h-10 w-10" />
                 </div>
                 <h3 className="font-display font-semibold text-foreground mb-1">{member.name}</h3>
                 <p className="text-sm text-primary font-medium"><span className="inline-block h-2 w-2 rounded-full bg-accent mr-2 align-middle" />{member.role}</p>
